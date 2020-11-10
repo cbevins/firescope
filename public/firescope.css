@@ -1,0 +1,258 @@
+* {
+  box-sizing: border-box;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Input Range Sliders */
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 18px 0;
+  width: 100%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: rgba(0,255,0,0.2);
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px  rgba(0,255,0,.2), 0px 0px 1px  rgba(0,255,0,0.48);
+  border: 1px solid #000000;
+  height: 24px;
+  width: 12px;
+  border-radius: 3px;
+  background:rgb(143, 202, 143);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -14px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: rgba(0,255,0,0.2);
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background:  rgba(0,255,0,0.2);
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px  rgba(0,255,0,.2), 0px 0px 1px  rgba(0,255,0,0.48);
+  border: 1px solid #777;
+  height: 24px;
+  width: 12px;
+  border-radius: 3px;
+  background: rgb(143, 202, 143);
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #2a6495;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+  background: #3071a9;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px  rgba(0,255,0,.2), 0px 0px 1px  rgba(0,255,0,0.48);
+  border: 1px solid #000000;
+  height: 24px;
+  width: 12px;
+  border-radius: 3px;
+  background:rgb(143, 202, 143);
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #3071a9;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #367ebd;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Firscope Input Range Sliders */
+.firescope-vslider-group-1 {
+  width: 50px;
+  height: 220px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,255,0,0.48);
+}
+.firescope-vslider-group-2 {
+  width: 100px;
+  height: 220px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,255,0,0.48);
+}
+.firescope-vslider-group-3 {
+  width: 150px;
+  height: 220px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,255,0,0.48);
+}
+.firescope-vslider-arrow {
+  font-size: 1em;
+  text-align: center;
+  color: green;
+  margin: 0;
+  padding: 0;
+  width: 1em;
+}
+.firescope-vslider-label {
+  font-family: "Lucida Sans", sans-serif;
+  font-size: 12px;
+  text-align: center;
+  color: green;
+  margin: 0px;
+  line-height: 1.2;
+}
+.firescope-vslider-title {
+  font-family: "Lucida Sans", sans-serif;
+  font-size: 12px;
+  text-align: center;
+  color: green;
+  margin: 0px;
+  line-height: 1.4;
+}
+.firescope-vslider-units {
+  font-family: "Lucida Sans", sans-serif;
+  font-size: 7px;
+  text-align: left;
+  color: green;
+  padding: 0;
+  margin: 0px;
+}
+.firescope-vslider-value {
+  font-family: "Lucida Sans", sans-serif;
+  font-size: 12px;
+  text-align: center;
+  color: green;
+  margin: 0px;
+  line-height: 1.2;
+}
+.firescope-vslider {
+  font-family: "Lucida Sans", sans-serif;
+  font-size: 12px;
+  width: 45px;
+  height: 220px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 0;
+  float: left;
+}
+.firescope-vslider-wrapper {
+  display: inline-block;
+  width: 20px;
+  height: 140px;
+  padding: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.24), 0 1px 2px rgba(0,0,0,0.48);
+}
+.firescope-vslider-wrapper input {
+  width: 140px;
+  height: 20px;
+  margin: 0;
+  transform-origin: 70px 70px;
+  transform: rotate(-90deg);
+}
+.firescope-vslider-group {
+  width: 45px;
+  height: 220px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,255,0,0.48);
+}
+/* -------------------------------------------------------------------------- */
+/* Firescope <select>
+/* class applies to select element itself, not a wrapper element */
+.firescope-select {
+    display: block;
+    font-size: 12px;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: #444;
+    line-height: 1.2;
+    padding: .6em 1.4em .5em .8em;
+    /* width: 100%; */
+    max-width: 100%; /* useful when width is set to anything other than 100% */
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: .5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    /* note: bg image below uses 2 urls.
+      The first is an svg data uri for the arrow icon, and the second is the gradient.
+      For the icon, if you want to change the color,
+      be sure to use `%23` instead of `#`, since it's a url.
+      You can also swap in a different svg icon or an external image reference
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+      linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+    */
+    background-image: url('favicon.png'),
+      linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+    background-repeat: no-repeat, repeat;
+    /* arrow icon position (1em from the right, 50% vertical) , then gradient position*/
+    background-position: right .2em top 50%, 0 0;
+    /* icon size, then gradient */
+    background-size: 1.5em auto, 100%;
+}
+/* Hide arrow icon in IE browsers */
+.firescope-select::-ms-expand {
+    display: none;
+}
+/* Hover style on option items*/
+.firescope-select:hover {
+    border-color: #888;
+}
+/* Focus style */
+.firescope-select:focus {
+    border-color: #aaa;
+    /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222;
+    outline: none;
+}
+/* Set options to normal weight */
+.firescope-select option {
+    font-size: 12px;
+    font-family: sans-serif;
+    font-weight: normal;
+    color: #444;
+}
+/* Support for rtl text, explicit support for Arabic and Hebrew
+*[dir="rtl"] .firescope-select, :root:lang(ar) .firescope-select, :root:lang(iw) .firescope-select {
+    background-position: left .7em top 50%, 0 0;
+    padding: .6em .8em .5em 1.4em;
+} */
+/* Disabled styles */
+.firescope-select:disabled /*, .firescope-select[aria-disabled=true] */ {
+    color: graytext;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22graytext%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+      linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+}
+.firescope-select:disabled:hover /*, .firescope-select[aria-disabled=true] */{
+    border-color: #aaa;
+}

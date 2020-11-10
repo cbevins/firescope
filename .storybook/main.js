@@ -1,6 +1,7 @@
 module.exports = {
   stories: [
     "../src/**/*.stories.mdx",
+    '../src/component/**/*.stories.js',
     '../src/starter/stories/**/*.stories.js'
   ],
   addons: [
