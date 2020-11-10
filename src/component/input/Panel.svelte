@@ -10,21 +10,9 @@
   import { slopeDegrees } from '../../model/compass.js'
 
   export let _input
-  export let _output
-
-  let area = firescope.displayString($_output.fireArea)
-  let ros = firescope.displayString($_output.headingSpreadRate)
-  let sh = firescope.displayString($_output.headingScorchHeight)
-  let steepness = slopeDegrees($_input.slopeSteepnessRatio.value.base).toFixed(2) + ' deg'
-  $: {
-    area = firescope.displayString($_output.fireArea)
-    ros = firescope.displayString($_output.headingSpreadRate)
-    sh = firescope.displayString($_output.headingScorchHeight)
-    steepness = slopeDegrees($_input.slopeSteepnessRatio.value.base).toFixed(2) + ' deg'
-  }
+  // export let _output
 </script>
 
-<h1>Firescope</h1>
 <table>
   <tr>
     <td><DeadFuelMoisture
@@ -46,7 +34,3 @@
       bind:minutes={$_input.timeSinceIgnition.value.base} /></td>
   </tr>
 </table>
-<p>Heading Spread Rate is {ros}</p>
-<p>Heading Scorch Height is {sh}</p>
-<p>Fire Area is {area}</p>
-<p>Slope Steepness is {steepness}</p>
