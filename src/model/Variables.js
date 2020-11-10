@@ -53,7 +53,7 @@ export const Input = {
     range: { min: 0.01, max: 0.4, step: 0.01 },
     value: { base: 0.09 }
   },
-  fuelMoistureLiveHerbase: {
+  fuelMoistureLiveHerb: {
     nodeKey: 'site.moisture.live.herb',
     variant: Variant.fuelMoisture,
     range: { min: 0.3, max: 4, step: 0.1 },

@@ -1,9 +1,10 @@
 <script>
   import Vertical from './Vertical'
-  import { firescope } from '../../model/store.js'
-  export let _model
-  export let f = $_model.variable.airTemperature.value.base
-  const range = firescope.variable.airTemperature.range
+  import { Input } from '../../model/Variables.js'
+
+  export let f
+
+  const range = Input.airTemperature.range
   function fahrenheit(f) { return f.toFixed(0) + '\u2109'}
   function centigrade(f) { return (5 * (f-32) / 9).toFixed(0) + '\u2103' }
 </script>
