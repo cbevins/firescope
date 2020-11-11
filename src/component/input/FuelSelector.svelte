@@ -1,0 +1,65 @@
+<script>
+  export let key
+
+  let fuels = [
+    { key: '1', text: '1: Short grass'},
+    { key: '2', text: '2: Timber grass and understory'},
+    { key: '3', text: '3: Tall grass'},
+    { key: '4', text: '4: Chaparral'},
+    { key: '5', text: '5: Brush'},
+    { key: '6', text: '6: Dormant brush, hardwood slash'},
+    { key: '7', text: '7: Southern rough'},
+    { key: '8', text: '8: Short needle litter'},
+    { key: '9', text: '9: Long needle or hardwood litter'},
+    { key: '10', text: '10: Timber litter & understory'},
+    { key: '11', text: '11: Light logging slash'},
+    { key: '12', text: '12: Medium logging slash'},
+    { key: '13', text: '13: Heavy logging slash'},
+    { key: 'gr1', text: 'gr1: Short, sparse, dry climate grass'},
+    { key: 'gr2', text: 'gr2: Low load, dry climate grass'},
+    { key: 'gr3', text: 'gr3: Low load, very coarse, humid climate grass'},
+    { key: 'gr4', text: 'gr4: Moderate load, dry climate grass'},
+    { key: 'gr5', text: 'gr5: Low load, humid climate grass'},
+    { key: 'gr6', text: 'gr6: Moderate load, humid climate grass'},
+    { key: 'gr7', text: 'gr7: High load, dry climate grass'},
+    { key: 'gr8', text: 'gr8: High load, very coarse, humid climate grass'},
+    { key: 'gr9', text: 'gr9: Very high load, humid climate grass'},
+    { key: 'gs1', text: 'gs1: Low load, dry climate grass-shrub'},
+    { key: 'gs2', text: 'gs2: Moderate load, dry climate grass-shrub'},
+    { key: 'gs3', text: 'gs3: Moderate load, humid climate grass-shrub'},
+    { key: 'gs4', text: 'gs4: High load, humid climate grass-shrub'},
+    { key: 'sh1', text: 'sh1: Low load, dry climate shrub'},
+    { key: 'sh2', text: 'sh2: Moderate load, dry climate shrub'},
+    { key: 'sh3', text: 'sh3: Moderate load, humid climate shrub'},
+    { key: 'sh4', text: 'sh4: Low load, humid climate timber-shrub'},
+    { key: 'sh5', text: 'sh5: High load, dry climate shrub'},
+    { key: 'sh6', text: 'sh6: Low load, humid climate shrub'},
+    { key: 'sh7', text: 'sh7: Very high load, dry climate shrub'},
+    { key: 'sh8', text: 'sh8: High load, humid climate shrub'},
+    { key: 'sh9', text: 'sh9: Very high load, humid climate shrub'},
+    { key: 'tu1', text: 'tu1: Light load, dry climate timber-grass-shrub'},
+    { key: 'tu2', text: 'tu2: Moderate load, humid climate timber-shrub'},
+    { key: 'tu3', text: 'tu3: Moderate load, humid climate timber-grass-shrub'},
+    { key: 'tu4', text: 'tu4: Dwarf conifer understory'},
+    { key: 'tu5', text: 'tu5: Very high load, dry climate timber-shrub'},
+    { key: 'tl1', text: 'tl1: Low load, compact conifer litter'},
+    { key: 'tl2', text: 'tl2: Low load broadleaf litter'},
+    { key: 'tl3', text: 'tl3: Moderate load conifer litter'},
+    { key: 'tl4', text: 'tl4: Small downed logs'},
+    { key: 'tl5', text: 'tl5: High load conifer litter'},
+    { key: 'tl6', text: 'tl6: High load broadleaf litter'},
+    { key: 'tl7', text: 'tl7: Large downed logs'},
+    { key: 'tl8', text: 'tl8: Long-needle litter'},
+    { key: 'tl9', text: 'tl9: Very high load broadleaf litter'},
+    { key: 'sb1', text: 'sb1: Low load activity fuel'},
+    { key: 'sb2', text: 'sb2: Moderate load activity or low load blowdown'},
+    { key: 'sb3', text: 'sb3: High load activity fuel or moderate load blowdown'},
+    { key: 'sb4', text: 'sb4: High load blowdown'},
+  ]
+</script>
+
+<select class='firescope-select' style='width:285px;' bind:value={key}>
+	{#each fuels as fuel}
+		<option value={fuel.key}>{fuel.text}</option>
+	{/each}
+</select>

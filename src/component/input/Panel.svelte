@@ -1,9 +1,12 @@
 <script>
   import AirTemperature from '../slider/AirTemperature.svelte'
+  import BehaviorSelector from '../input/BehaviorSelector.svelte'
   import DeadFuelMoisture from '../slider/DeadFuelMoisture.svelte'
   import ElapsedTime from '../slider/ElapsedTime.svelte'
+  import FuelSelector from '../input/FuelSelector.svelte'
   import LiveFuelMoisture from '../slider/LiveFuelMoisture.svelte'
   import SlopeAspect from '../slider/SlopeAspect.svelte'
+  import UnitsSelector from '../input/UnitsSelector.svelte'
   import WindSpeedDirection from '../slider/WindSpeedDirection.svelte'
 
   import { firescope } from '../../model/store.js'
@@ -13,6 +16,14 @@
   // export let _output
 </script>
 
+<!-- Do NOT use Bootstrap Table -->
+<table style='margin-bottom: 5px;'>
+  <tr>
+    <td colspan='3'><FuelSelector bind:key={$_input.fuelModelCatalogKey.value.base}/></td>
+    <td padding='5'><UnitsSelector bind:units={$_input.uomSlate} /></td>
+    <td colspan='2'><BehaviorSelector bind:behavior={$_input.behavior} /></td>
+  </tr>
+</table>
 <table>
   <tr>
     <td><DeadFuelMoisture
