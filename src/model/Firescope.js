@@ -14,9 +14,10 @@ export class Firescope {
     this.dag = new Dag.Bpx()
 
     this.input = { ...Input }
-    this.input.dag = this.dag // included for easy access by components from the _input prop
-    this.input.uomSlate = 'usc' // 'base', 'usc', 'uss', 'sim'
-    this.input.behavior = 'spreadRate' // variable shown on fire ellipse
+    Object.defineProperty(this.input, 'uomSlate', { enumerable: false, writable: true, value: 'usc' })
+    Object.defineProperty(this.input, 'behavior', { enumerable: false, writable: true, value: 'spreadRate' })
+    this.input.uomSlate = 'usc'
+    this.input.behavior = 'spreadRate'
     // By using Object.keys(Input), we skip iterating over non-variable properties
     Object.keys(Input).forEach(key => {
       const item = this.input[key]
@@ -67,7 +68,7 @@ export class Firescope {
 
   setValues (item, baseValue) {
     item.value.base = baseValue
-    if (item.variant !== null) {
+    if (item.variant.type === 'Quantity') {
       const u = item.variant.units
       item.value.usc = Uom.convert(baseValue, u.base, u.usc)
       item.value.uss = Uom.convert(baseValue, u.base, u.uss)
@@ -88,7 +89,7 @@ export class Firescope {
    * @return {string} The *item*'s display value (and units-of-measure) for the *uomSlate*
    */
   displayString (item, uomSlate = null) {
-    if (item.variant !== null) {
+    if (item.variant.type === 'Quantity') {
       const slate = !uomSlate ? this.input.uomSlate : uomSlate
       const decimals = item.variant.decimals[slate]
       const display = item.value[slate].toFixed(decimals)
@@ -107,7 +108,7 @@ export class Firescope {
    * @return {string} The *item*'s units-of-measure for the *uomSlate*.
    */
   displayUnits (item, uomSlate = null) {
-    if (item.variant !== null) {
+    if (item.variant.type === 'Quantity') {
       const slate = !uomSlate ? this.input.uomSlate : uomSlate
       return item.variant.units[slate]
     }
@@ -123,7 +124,7 @@ export class Firescope {
    * @return {string} The *item*'s display value for the *uomSlate*.
    */
   displayValue (item, uomSlate = null) {
-    if (item.variant !== null) {
+    if (item.variant.type === 'Quantity') {
       const slate = !uomSlate ? this.input.uomSlate : uomSlate
       const decimals = item.variant.decimals[slate]
       return item.value[slate].toFixed(decimals)

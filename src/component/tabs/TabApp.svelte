@@ -5,7 +5,8 @@
   import TabPanel from './TabPanel.svelte'
 
   import FireScope from '../scope/Scope.svelte'
-  import FireTable from '../table/FireTable.svelte'
+  import Inputs from '../table/Inputs.svelte'
+  import Outputs from '../table/Outputs.svelte'
   import Reels from '../reels/Reels.svelte'
 
   export let _input
@@ -16,7 +17,8 @@
 	<TabList>
 		<Tab>Firescope</Tab>
 		<Tab>Reels</Tab>
-		<Tab>Table</Tab>
+		<Tab>Inputs</Tab>
+		<Tab>Outputs</Tab>
 	</TabList>
 
 	<TabPanel>
@@ -28,6 +30,10 @@
 	</TabPanel>
 
 	<TabPanel>
-    <FireTable _input={_input} _output={_output} />
+    <Inputs _input={_input} />
+	</TabPanel>
+
+	<TabPanel>
+    <Outputs _input={_input} _output={_output} />
 	</TabPanel>
 </Tabs>
