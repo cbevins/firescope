@@ -16,8 +16,6 @@ export class Firescope {
     this.input = { ...Input }
     Object.defineProperty(this.input, 'uomSlate', { enumerable: false, writable: true, value: 'usc' })
     Object.defineProperty(this.input, 'behavior', { enumerable: false, writable: true, value: 'spreadRate' })
-    this.input.uomSlate = 'usc'
-    this.input.behavior = 'spreadRate'
     // By using Object.keys(Input), we skip iterating over non-variable properties
     Object.keys(Input).forEach(key => {
       const item = this.input[key]
@@ -36,19 +34,10 @@ export class Firescope {
     this.dag.setConfigs(Config)
     this.runSingle()
 
-    this.range = {
-      x: {
-        key: 'windSpeedAtMidflame',
-        node: null,
-        spec: null, // Input element
-        values: { base: [], uss: [], usc: [], sim: [] }
-      },
-      y: {
-        key: 'headingSpreadRate',
-        node: null,
-        spec: null, // Output element
-        values: { base: [], uss: [], usc: [], sim: [] }
-      }
+    Object.defineProperty(this.input, 'graph', { enumerable: false, writable: true, value: {} })
+    this.input.graph = {
+      xvar: 'windSpeedAtMidflame',
+      yvar: 'spreadRate'
     }
   }
 

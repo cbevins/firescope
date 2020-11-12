@@ -16,12 +16,15 @@
 </script>
 
 <!-- Do NOT use Bootstrap Table -->
-<table style='margin-bottom: 5px;'>
-  <tr>
-    <td colspan='3'><FuelSelector bind:key={$_input.fuelModelCatalogKey.value.base}/></td>
-    <td padding='5'><UnitsSelector bind:units={$_input.uomSlate} /></td>
-  </tr>
-</table>
+<div class='row'>
+  <div class='col'>
+    <FuelSelector bind:key={$_input.fuelModelCatalogKey.value.base}/>
+  </div>
+  <div class='col'>
+    <UnitsSelector bind:units={$_input.uomSlate} />
+  </div>
+</div>
+
 <table>
   <tr>
     <td><DeadFuelMoisture

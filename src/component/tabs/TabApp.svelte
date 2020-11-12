@@ -5,6 +5,7 @@
   import TabPanel from './TabPanel.svelte'
 
   import FireScope from '../scope/Scope.svelte'
+  import Graph from '../graph/Graph.svelte'
   import Inputs from '../table/Inputs.svelte'
   import Outputs from '../table/Outputs.svelte'
   import Reels from '../reels/Reels.svelte'
@@ -19,6 +20,7 @@
 		<Tab>Reels</Tab>
 		<Tab>Inputs</Tab>
 		<Tab>Outputs</Tab>
+		<Tab>Graph</Tab>
 	</TabList>
 
 	<TabPanel>
@@ -35,5 +37,9 @@
 
 	<TabPanel>
     <Outputs _input={_input} _output={_output} />
+	</TabPanel>
+
+	<TabPanel>
+    <Graph _input={_input} _output={_output} />
 	</TabPanel>
 </Tabs>

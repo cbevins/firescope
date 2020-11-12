@@ -43,12 +43,12 @@ test('3: Firescope units-of-measure', () => {
   expect(model.displayString(model.output.spreadRate, 'sim')).toEqual('60.49 m/min')
   expect(model.displayUnits(model.output.spreadRate, 'sim')).toEqual('m/min')
 
-  expect(model.displayValue(model.input.fuelModelCatalogKey)).toEqual('124')
-  expect(model.displayString(model.input.fuelModelCatalogKey)).toEqual('124')
+  expect(model.displayValue(model.input.fuelModelCatalogKey)).toEqual('gs4')
+  expect(model.displayString(model.input.fuelModelCatalogKey)).toEqual('gs4')
   expect(model.displayUnits(model.input.fuelModelCatalogKey)).toEqual('')
 
-  expect(model.displayValue(model.input.fuelModelCatalogKey, 'sim')).toEqual('124')
-  expect(model.displayString(model.input.fuelModelCatalogKey, 'sim')).toEqual('124')
+  expect(model.displayValue(model.input.fuelModelCatalogKey, 'sim')).toEqual('gs4')
+  expect(model.displayString(model.input.fuelModelCatalogKey, 'sim')).toEqual('gs4')
   expect(model.displayUnits(model.input.fuelModelCatalogKey, 'sim')).toEqual('')
 })
 
