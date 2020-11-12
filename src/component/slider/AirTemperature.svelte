@@ -1,5 +1,5 @@
 <script>
-  import Vertical from './Vertical'
+  import Vertical from './Vertical.svelte'
   import { Input } from '../../model/Variables.js'
 
   export let f
