@@ -30,10 +30,10 @@
       "^.+\\.stories\\.[jt]sx?$": "<rootDir>node_modules/@storybook/addon-storyshots/injectFileName",
       "^.+\\.svelte$": "jest-transform-svelte"
     },
-  "transformIgnorePatterns": [
-    "/node_modules/(?!@cbevins/behaveplus-radical).+\\.js$"
-  ],
-  "moduleFileExtensions": [
+    "transformIgnorePatterns": [
+      "/node_modules/(?!@cbevins/behaveplus-radical).+\\.js$"
+    ],
+    "moduleFileExtensions": [
       "js",
       "svelte",
       "json"
@@ -89,6 +89,7 @@
   "dependencies": {
     "@cbevins/behaveplus-radical": "0.2.0",
     "@cbevins/behaveplus-uom": "0.1.0",
+    "chart.js": "2.9.4",
     "sirv-cli": "1.0.8"
   }
 }

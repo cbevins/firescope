@@ -2,12 +2,14 @@
  * Adapter between behaveplus-radical and Firescope
  */
 
-// JEST-FIX Jest tests require a file to transform
+// JEST-FIX Jest tests require a file to transform via Babel
 import * as Dag from './behaveplus.esm.js'
 // import * as Dag from '@cbevins/behaveplus-radical'
 
 import * as Uom from '@cbevins/behaveplus-uom'
 import { Config, Input, Output } from './Variables.js'
+
+export const generateRange = (start, stop, step) => Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + (i * step))
 
 export class Firescope {
   constructor () {
@@ -47,87 +49,6 @@ export class Firescope {
       }
     }
     this.runSingle()
-  }
-
-  runSingle (input = null) {
-    if (input) {
-      this.input = input
-    }
-    this.dag.setSelected(this.selected)
-
-    // Build the Dag input array and submit for a run
-    // Must ensure that all input controls have stored *base* values
-    // in the item.value.base property
-    const dagInput = []
-    // By using Object.keys(Input), we skip iterating over non-variable properties
-    Object.keys(Input).forEach(key => {
-      const item = this.input[key]
-      this.setValues(item, item.value.base)
-      dagInput.push([item.node, [item.value.base]])
-    })
-    this.dag.runInputs(dagInput)
-
-    // Retrieve selected Node values
-    // By using Object.keys(Output), we skip iterating over non-variable properties
-    Object.keys(Output).forEach(key => {
-      const item = this.output[key]
-      this.setValues(item, item.node.value)
-    })
-
-    this.runRange()
-
-    // Return this.output so run() can be used inside the Svelte derived store
-    return this.output
-  }
-
-  // Run range variable
-  runRange () {
-    const x = this.input.graph.x
-    x.item = this.input[x.key]
-    x.values.base = generateRange(x.item.range.min, x.item.range.max, x.item.range.step)
-    const y = this.input.graph.y
-    y.item = this.output[y.key]
-    const xBase = x.item.value.base // save for later restore
-    this.dag.setSelected([[y.item.node, true]])
-    this.dag.runInputs([[x.item.node, x.values.base]])
-
-    // Store the outputs
-    y.values.base = [...this.dag.dna.results.map.get(y.item.node)]
-
-    // Convert results to various units-of-measure
-    y.values.usc = []
-    y.values.uss = []
-    y.values.sim = []
-    let u = y.item.variant.units
-    y.values.base.forEach(baseValue => {
-      y.values.usc.push(Uom.convert(baseValue, u.base, u.usc))
-      y.values.uss.push(Uom.convert(baseValue, u.base, u.uss))
-      y.values.sim.push(Uom.convert(baseValue, u.base, u.sim))
-    })
-    x.values.usc = []
-    x.values.uss = []
-    x.values.sim = []
-    u = x.item.variant.units
-    x.values.base.forEach(baseValue => {
-      x.values.usc.push(Uom.convert(baseValue, u.base, u.usc))
-      x.values.uss.push(Uom.convert(baseValue, u.base, u.uss))
-      x.values.sim.push(Uom.convert(baseValue, u.base, u.sim))
-    })
-    x.item.value.base = xBase
-  }
-
-  setValues (item, baseValue) {
-    item.value.base = baseValue
-    if (item.variant.type === 'Quantity') {
-      const u = item.variant.units
-      item.value.usc = Uom.convert(baseValue, u.base, u.usc)
-      item.value.uss = Uom.convert(baseValue, u.base, u.uss)
-      item.value.sim = Uom.convert(baseValue, u.base, u.sim)
-    } else {
-      item.value.usc = baseValue
-      item.value.uss = baseValue
-      item.value.sim = baseValue
-    }
   }
 
   /**
@@ -181,6 +102,91 @@ export class Firescope {
     }
     return item.value.base
   }
-}
 
-export const generateRange = (start, stop, step) => Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + (i * step))
+  /**
+   * Makes a single model run (o.e., all inputs have single values)
+   * @param {object} input
+   */
+  runSingle (input = null) {
+    if (input) {
+      this.input = input
+    }
+    this.dag.setSelected(this.selected)
+
+    // Build the Dag input array and submit for a run
+    // Must ensure that all input controls have stored *base* values
+    // in the item.value.base property
+    const dagInput = []
+    // By using Object.keys(Input), we skip iterating over non-variable properties
+    Object.keys(Input).forEach(key => {
+      const item = this.input[key]
+      this.setValues(item, item.value.base)
+      dagInput.push([item.node, [item.value.base]])
+    })
+    this.dag.runInputs(dagInput)
+
+    // Retrieve selected Node values
+    // By using Object.keys(Output), we skip iterating over non-variable properties
+    Object.keys(Output).forEach(key => {
+      const item = this.output[key]
+      this.setValues(item, item.node.value)
+    })
+
+    this.runRange()
+
+    // Return this.output so run() can be used inside the Svelte derived store
+    return this.output
+  }
+
+  // Run range variable
+  runRange () {
+    const x = this.input.graph.x
+    x.item = this.input[x.key]
+    x.values.base = generateRange(x.item.range.min, x.item.range.max, x.item.range.step)
+    const y = this.input.graph.y
+    y.item = this.output[y.key]
+    const xBase = x.item.value.base // save for later restore
+    this.dag.setSelected([[y.item.node, true]])
+    this.dag.runInputs([[x.item.node, x.values.base]])
+
+    // Store the outputs
+    y.values.base = [...this.dag.dna.results.map.get(y.item.node)]
+
+    // Convert results to various units-of-measure and decimals
+    y.values.usc = []
+    y.values.uss = []
+    y.values.sim = []
+    let u = y.item.variant.units
+    let d = y.item.variant.decimals
+    y.values.base.forEach(baseValue => {
+      y.values.usc.push(Uom.convert(baseValue, u.base, u.usc).toFixed(d.usc))
+      y.values.uss.push(Uom.convert(baseValue, u.base, u.uss).toFixed(d.uss))
+      y.values.sim.push(Uom.convert(baseValue, u.base, u.sim).toFixed(d.sim))
+    })
+    x.values.usc = []
+    x.values.uss = []
+    x.values.sim = []
+    u = x.item.variant.units
+    d = x.item.variant.decimals
+    x.values.base.forEach(baseValue => {
+      x.values.usc.push(Uom.convert(baseValue, u.base, u.usc).toFixed(d.usc))
+      x.values.uss.push(Uom.convert(baseValue, u.base, u.uss).toFixed(d.uss))
+      x.values.sim.push(Uom.convert(baseValue, u.base, u.sim).toFixed(d.sim))
+    })
+    x.item.value.base = xBase
+  }
+
+  setValues (item, baseValue) {
+    item.value.base = baseValue
+    if (item.variant.type === 'Quantity') {
+      const u = item.variant.units
+      item.value.usc = Uom.convert(baseValue, u.base, u.usc)
+      item.value.uss = Uom.convert(baseValue, u.base, u.uss)
+      item.value.sim = Uom.convert(baseValue, u.base, u.sim)
+    } else {
+      item.value.usc = baseValue
+      item.value.uss = baseValue
+      item.value.sim = baseValue
+    }
+  }
+}

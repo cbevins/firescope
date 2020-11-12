@@ -109,3 +109,4 @@ dist
 public/build/bundle.css
 public/build/bundle.css
 public/build/bundle.css.map
+src/component/graph/sampleData.js
