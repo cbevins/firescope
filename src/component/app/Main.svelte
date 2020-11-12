@@ -1,6 +1,6 @@
 <script>
-  import TabApp from '../tabs/TabApp.svelte'
-  import Panel from '../input/Panel.svelte'
+  import Tabs from './Tabs.svelte'
+  import InputPanel from './InputPanel.svelte'
 
   export let _input
   export let _output
@@ -14,13 +14,13 @@
 <div class="container-lg">
   <div class='row'>
     <div class='col-sm'>
-      <TabApp _input={_input} _output={_output} />
+      <Tabs _input={_input} _output={_output} />
     </div>
   </div>
   <hr/>
   <div class='row'>
     <div class='col-sm'>
-      <Panel _input={_input} _output={_output} />
+      <InputPanel _input={_input} _output={_output} />
       </div>
   </div>
 </div>

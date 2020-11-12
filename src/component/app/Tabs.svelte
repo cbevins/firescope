@@ -1,8 +1,8 @@
 <script>
-  import Tab from './Tab.svelte'
-  import Tabs from './Tabs.svelte'
-  import TabList from './TabList.svelte'
-  import TabPanel from './TabPanel.svelte'
+  import Tab from '../tabs/Tab.svelte'
+  import Tabs from '../tabs/Tabs.svelte'
+  import TabList from '../tabs/TabList.svelte'
+  import TabPanel from '../tabs/TabPanel.svelte'
 
   import FireScope from '../scope/Scope.svelte'
   import Graph from '../graph/Graph.svelte'
