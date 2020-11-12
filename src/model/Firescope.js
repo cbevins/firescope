@@ -35,6 +35,21 @@ export class Firescope {
     })
     this.dag.setConfigs(Config)
     this.runSingle()
+
+    this.range = {
+      x: {
+        key: 'windSpeedAtMidflame',
+        node: null,
+        spec: null, // Input element
+        values: { base: [], uss: [], usc: [], sim: [] }
+      },
+      y: {
+        key: 'headingSpreadRate',
+        node: null,
+        spec: null, // Output element
+        values: { base: [], uss: [], usc: [], sim: [] }
+      }
+    }
   }
 
   runSingle (input = null) {
@@ -130,6 +145,36 @@ export class Firescope {
       return item.value[slate].toFixed(decimals)
     }
     return item.value.base
+  }
+
+  // Run range variable
+  runRange () {
+    const x = this.range.x
+    const y = this.range.y
+    x.spec = this.findSpec(Input, x.key)
+    x.node = this.dag.get(x.spec.n)
+    x.values = { b: [], e: [], f: [], m: [] }
+    y.spec = this.findSpec(Output, y.key)
+    y.node = this.dag.get(y.spec.n)
+    y.values = { b: [], e: [], f: [], m: [] }
+
+    // Generate the x base input values
+    for (let xv = x.spec.min; xv <= x.spec.max + 1e-6; xv += x.spec.step) {
+      x.values.b.push(xv * x.spec.f)
+      // \TODO - store e[], m[], f[] values
+    }
+    // Run the inputs
+    this.dag.setSelected([[y.node, true]])
+    this.dag.runInputs([[x.node, x.values.b]])
+    // Store the outputs
+    y.values.b = [...this.dag.dna.results.map.get(y.node)]
+    const u = y.spec.u
+    const v = y.node.variant
+    y.values.b.forEach(bv => {
+      y.values.e.push((u === none) ? bv : v.baseAsUom(bv, u.e))
+      y.values.f.push((u === none) ? bv : v.baseAsUom(bv, u.f))
+      y.values.m.push((u === none) ? bv : v.baseAsUom(bv, u.m))
+    })
   }
 }
 

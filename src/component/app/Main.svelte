@@ -11,8 +11,16 @@
   <link rel="stylesheet" href="firescope.css">
 </svelte:head>
 
-<div>
-  <TabApp _input={_input} _output={_output} />
+<div class="container-lg">
+  <div class='row'>
+    <div class='col-sm'>
+      <TabApp _input={_input} _output={_output} />
+    </div>
+  </div>
   <hr/>
-  <Panel _input={_input} _output={_output} />
+  <div class='row'>
+    <div class='col-sm'>
+      <Panel _input={_input} _output={_output} />
+      </div>
+  </div>
 </div>

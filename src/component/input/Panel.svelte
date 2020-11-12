@@ -1,6 +1,5 @@
 <script>
   import AirTemperature from '../slider/AirTemperature.svelte'
-  import BehaviorSelector from '../input/BehaviorSelector.svelte'
   import DeadFuelMoisture from '../slider/DeadFuelMoisture.svelte'
   import ElapsedTime from '../slider/ElapsedTime.svelte'
   import FuelSelector from '../input/FuelSelector.svelte'
@@ -21,7 +20,6 @@
   <tr>
     <td colspan='3'><FuelSelector bind:key={$_input.fuelModelCatalogKey.value.base}/></td>
     <td padding='5'><UnitsSelector bind:units={$_input.uomSlate} /></td>
-    <td colspan='2'><BehaviorSelector bind:behavior={$_input.behavior} /></td>
   </tr>
 </table>
 <table>

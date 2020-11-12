@@ -1,4 +1,5 @@
 <script>
+  import BehaviorSelector from '../input/BehaviorSelector.svelte'
   import SvgFireTable from './SvgFireTable.svelte'
 
   export let width
@@ -244,26 +245,38 @@
   </defs>
 </svg>
 
-<div class="firescope-box">
-  <svg viewBox={viewbox} width={width} height={height} >
-    <use xlink:href="#fireCompass" transform={compassPos}/>
-    <use xlink:href="#slopeBubble" transform={compassPos}/>
-    <use xlink:href="#slopeBubbleText" transform={compassPos}/>
-    <use xlink:href="#windNeedle" transform={compassPos}/>
-    <use xlink:href="#windNeedleText" transform={compassPos}/>
-    <use xlink:href="#fireEllipse" transform={compassPos}/>
-    <use xlink:href="#fireEllipseText" transform={compassPos}/>
-    <use xlink:href="#fireBox" transform='translate(0,0)'/>
-  </svg>
-  <SvgFireTable viewbox="0, 0, 80, 130"
-    width={width} height={height} _output={_output} _input={_input}/>
+<div class='row'>
+  <div class='col'>
+    <div>
+      <svg viewBox={viewbox} width={width} height={height} >
+        <use xlink:href="#fireCompass" transform={compassPos}/>
+        <use xlink:href="#slopeBubble" transform={compassPos}/>
+        <use xlink:href="#slopeBubbleText" transform={compassPos}/>
+        <use xlink:href="#windNeedle" transform={compassPos}/>
+        <use xlink:href="#windNeedleText" transform={compassPos}/>
+        <use xlink:href="#fireEllipse" transform={compassPos}/>
+        <use xlink:href="#fireEllipseText" transform={compassPos}/>
+        <use xlink:href="#fireBox" transform='translate(0,0)'/>
+      </svg>
+    </div>
+    <div class='row'>
+      <div class='col-sm-3'></div>
+      <div class='col'>
+        <BehaviorSelector bind:behavior={$_input.behavior} />
+      </div>
+    </div>
+  </div>
+  <div class='col'>
+    <SvgFireTable viewbox="0, 0, 80, 130"
+      width={width} height={height} _output={_output} _input={_input}/>
+  </div>
 </div>
 
 <style>
-  .firescope-box {
+  /* .firescope-box {
     margin-bottom: 10px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.48);
-  }
+  } */
   .compass-face {
 		stroke: #333;
     stroke-opacity: 50%;

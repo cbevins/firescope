@@ -8,7 +8,7 @@
   ]
 </script>
 
-<select class='firescope-select' bind:value={behavior}>
+<select class='firescope-select' style='margin:5px' bind:value={behavior}>
 	{#each behaviors as b}
 		<option value={b.v}>{b.text}</option>
 	{/each}

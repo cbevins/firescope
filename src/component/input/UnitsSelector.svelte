@@ -8,7 +8,7 @@
   ]
 </script>
 
-<select class='firescope-select' style='width:110px;' bind:value={units}>
+<select class='firescope-select' style='width:125px;' bind:value={units}>
 	{#each uoms as uom}
 		<option value={uom.u}>{uom.text}</option>
 	{/each}
