@@ -1,6 +1,7 @@
 <script>
 	import { afterUpdate, onMount } from 'svelte'
-	import { fade, slide } from 'svelte/transition'
+  import { fade, slide } from 'svelte/transition'
+  import { Chart } from 'chart.js'
   import InputSelector from '../input/InputSelector.svelte'
   import OutputSelector from '../input/OutputSelector.svelte'
 
