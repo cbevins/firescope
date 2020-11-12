@@ -32,13 +32,21 @@ export class Firescope {
       this.selected.push([item.node, true]) // Add all outputs to the dag selected array
     })
     this.dag.setConfigs(Config)
-    this.runSingle()
 
     Object.defineProperty(this.input, 'graph', { enumerable: false, writable: true, value: {} })
     this.input.graph = {
-      xvar: 'windSpeedAtMidflame',
-      yvar: 'spreadRate'
+      x: {
+        key: 'windSpeedAtMidflame',
+        item: null,
+        values: { base: [], uss: [], usc: [], sim: [] }
+      },
+      y: {
+        key: 'spreadRate',
+        item: null,
+        values: { base: [], uss: [], usc: [], sim: [] }
+      }
     }
+    this.runSingle()
   }
 
   runSingle (input = null) {
@@ -66,8 +74,46 @@ export class Firescope {
       this.setValues(item, item.node.value)
     })
 
+    this.runRange()
+
     // Return this.output so run() can be used inside the Svelte derived store
     return this.output
+  }
+
+  // Run range variable
+  runRange () {
+    const x = this.input.graph.x
+    x.item = this.input[x.key]
+    x.values.base = generateRange(x.item.range.min, x.item.range.max, x.item.range.step)
+    const y = this.input.graph.y
+    y.item = this.output[y.key]
+    const xBase = x.item.value.base // save for later restore
+    this.dag.setSelected([[y.item.node, true]])
+    this.dag.runInputs([[x.item.node, x.values.base]])
+
+    // Store the outputs
+    y.values.base = [...this.dag.dna.results.map.get(y.item.node)]
+
+    // Convert results to various units-of-measure
+    y.values.usc = []
+    y.values.uss = []
+    y.values.sim = []
+    let u = y.item.variant.units
+    y.values.base.forEach(baseValue => {
+      y.values.usc.push(Uom.convert(baseValue, u.base, u.usc))
+      y.values.uss.push(Uom.convert(baseValue, u.base, u.uss))
+      y.values.sim.push(Uom.convert(baseValue, u.base, u.sim))
+    })
+    x.values.usc = []
+    x.values.uss = []
+    x.values.sim = []
+    u = x.item.variant.units
+    x.values.base.forEach(baseValue => {
+      x.values.usc.push(Uom.convert(baseValue, u.base, u.usc))
+      x.values.uss.push(Uom.convert(baseValue, u.base, u.uss))
+      x.values.sim.push(Uom.convert(baseValue, u.base, u.sim))
+    })
+    x.item.value.base = xBase
   }
 
   setValues (item, baseValue) {
@@ -134,36 +180,6 @@ export class Firescope {
       return item.value[slate].toFixed(decimals)
     }
     return item.value.base
-  }
-
-  // Run range variable
-  runRange () {
-    const x = this.range.x
-    const y = this.range.y
-    x.spec = this.findSpec(Input, x.key)
-    x.node = this.dag.get(x.spec.n)
-    x.values = { b: [], e: [], f: [], m: [] }
-    y.spec = this.findSpec(Output, y.key)
-    y.node = this.dag.get(y.spec.n)
-    y.values = { b: [], e: [], f: [], m: [] }
-
-    // Generate the x base input values
-    for (let xv = x.spec.min; xv <= x.spec.max + 1e-6; xv += x.spec.step) {
-      x.values.b.push(xv * x.spec.f)
-      // \TODO - store e[], m[], f[] values
-    }
-    // Run the inputs
-    this.dag.setSelected([[y.node, true]])
-    this.dag.runInputs([[x.node, x.values.b]])
-    // Store the outputs
-    y.values.b = [...this.dag.dna.results.map.get(y.node)]
-    const u = y.spec.u
-    const v = y.node.variant
-    y.values.b.forEach(bv => {
-      y.values.e.push((u === none) ? bv : v.baseAsUom(bv, u.e))
-      y.values.f.push((u === none) ? bv : v.baseAsUom(bv, u.f))
-      y.values.m.push((u === none) ? bv : v.baseAsUom(bv, u.m))
-    })
   }
 }
 

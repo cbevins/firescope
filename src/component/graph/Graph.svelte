@@ -9,13 +9,25 @@
 <table>
   <tr>
     <td>Graph X Variable</td>
-    <td><InputSelector bind:selected={$_input.graph.xvar} _input={_input}/></td>
+    <td><InputSelector bind:selected={$_input.graph.x.key} _input={_input}/></td>
   </tr>
   <tr>
     <td>Graph Y Variable</td>
-    <td><OutputSelector bind:selected={$_input.graph.yvar} _output={_output}/></td>
+    <td><OutputSelector bind:selected={$_input.graph.y.key} _output={_output}/></td>
   </tr>
 </table>
 
-<p>input.grap.xvar = {$_input.graph.xvar}</p>
-<p>input.grap.yvar = {$_input.graph.yvar}</p>
+<table>
+  <tr>
+    <td>Idx</td>
+    <td>{$_input.graph.x.key}</td>
+    <td>{$_input.graph.y.key}</td>
+  </tr>
+  {#each $_input.graph.x.values.base as x, idx}
+    <tr>
+      <td>{idx}</td>
+      <td>{x}</td>
+      <td>{$_input.graph.y.values.base[idx]}</td>
+    </tr>
+    {/each}
+</table>
