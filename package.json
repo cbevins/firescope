@@ -89,6 +89,7 @@
   "dependencies": {
     "@cbevins/behaveplus-radical": "0.2.0",
     "@cbevins/behaveplus-uom": "0.1.0",
+    "bootstrap": "4.5.3",
     "chart.js": "2.9.4",
     "sirv-cli": "1.0.8"
   }

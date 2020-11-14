@@ -5,7 +5,7 @@
   export let minutes
 
   const range = Input.timeSinceIgnition.range
-  function format1(min) { return 'Ignited'}
+  function format1(min) { return 'Ign'}
   function format2(min) { return (min===0) ? 0 : (min/60).toFixed(2) + 'h'}
 </script>
 

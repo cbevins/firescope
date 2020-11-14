@@ -64,7 +64,10 @@
   //onMount(createGraph)
 </script>
 
-<canvas id="myChart" width="400" height="200"></canvas>
+    <div class="card" style="width: 100%;">
+      <div class="card-body">
+
+<canvas id="myChart" width="40" height="20"></canvas>
 <table>
   <tr>
     <td>Select X</td>
@@ -80,6 +83,8 @@
     </td>
   </tr>
 </table>
+</div>
+
 <p></p>
 {#if showTable }
   <div transition:fade>
@@ -99,3 +104,4 @@
     </table>
   </div>
 {/if}
+</div>

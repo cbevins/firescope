@@ -15,34 +15,49 @@
   // export let _output
 </script>
 
-<!-- Do NOT use Bootstrap Table -->
 <div class='row'>
   <div class='col'>
     <FuelSelector bind:key={$_input.fuelModelCatalogKey.value.base}/>
   </div>
+</div>
+
+<div class='row'>
   <div class='col'>
     <UnitsSelector bind:units={$_input.uomSlate} />
   </div>
 </div>
 
-<table>
-  <tr>
-    <td><DeadFuelMoisture
+<div class='row'>
+  <div class='col-6'>
+    <DeadFuelMoisture
       bind:tl1h={$_input.fuelMoistureDead1.value.base}
       bind:tl10h={$_input.fuelMoistureDead10.value.base}
-      bind:tl100h={$_input.fuelMoistureDead100.value.base} /></td>
-    <td><LiveFuelMoisture
+      bind:tl100h={$_input.fuelMoistureDead100.value.base} />
+  </div>
+  <div class='col'>
+    <LiveFuelMoisture
       bind:herb={$_input.fuelMoistureLiveHerb.value.base}
-      bind:stem={$_input.fuelMoistureLiveStem.value.base} /></td>
-    <td><SlopeAspect
+      bind:stem={$_input.fuelMoistureLiveStem.value.base} />
+  </div>
+</div>
+
+<div class='row'>
+  <div class='col-4'>
+    <SlopeAspect
       bind:steepness={$_input.slopeSteepnessRatio.value.base}
-      bind:aspect={$_input.slopeDirectionAspect.value.base} /></td>
-    <td><WindSpeedDirection
+      bind:aspect={$_input.slopeDirectionAspect.value.base} />
+  </div>
+  <div class='col-4'>
+    <WindSpeedDirection
       bind:speed={$_input.windSpeedAtMidflame.value.base}
-      bind:direction={$_input.windDirectionSourceFromNorth.value.base} /></td>
-    <td><AirTemperature
-      bind:f={$_input.airTemperature.value.base} /></td>
-    <td><ElapsedTime
-      bind:minutes={$_input.timeSinceIgnition.value.base} /></td>
-  </tr>
-</table>
+      bind:direction={$_input.windDirectionSourceFromNorth.value.base} />
+  </div>
+  <div class='col-2'>
+    <AirTemperature
+      bind:f={$_input.airTemperature.value.base} />
+  </div>
+  <div class='col-2'>
+    <ElapsedTime
+      bind:minutes={$_input.timeSinceIgnition.value.base} />
+  </div>
+</div>
