@@ -6,13 +6,12 @@
 </script>
 
 <svelte:head>
-  <link rel="stylesheet" href="bootstrap.min.css">
   <link rel="stylesheet" href="firescope.css">
 </svelte:head>
 
 <div class="container-lg">
   <div class='row'>
-    <div class='col-sm-4'>
+    <div class='col-sm-3'>
       <div class='card'>
         <div class='card-body'>
           <div class='overflow-auto'>
