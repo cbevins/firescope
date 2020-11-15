@@ -64,44 +64,46 @@
   //onMount(createGraph)
 </script>
 
-    <div class="card" style="width: 100%;">
-      <div class="card-body">
+<div class="card" style="width: 100%;">
+  <div class="card-body">
+    <div class="chart-container">
+      <canvas id="myChart" responsive='true'></canvas>
+    </div>
 
-<canvas id="myChart" width="40" height="20"></canvas>
-<table>
-  <tr>
-    <td>Select X</td>
-    <td><InputSelector bind:selected={$_input.graph.x.key} _input={_input}/></td>
-    <td>Select Y</td>
-    <td><OutputSelector bind:selected={$_input.graph.y.key} _output={_output}/></td>
-    <td>
-      <button type="button"
-        class="btn btn-outline-secondary btn-sm"
-        on:click={handleTable}>
-        {showTable ? 'Hide Graph Data' : 'Show Graph Data'}
-      </button>
-    </td>
-  </tr>
-</table>
-</div>
-
-<p></p>
-{#if showTable }
-  <div transition:fade>
     <table>
       <tr>
-        <td>Idx</td>
-        <td align='right'>{xLabel}</td>
-        <td align='right'>{yLabel}</td>
+        <td>Select X</td>
+        <td><InputSelector bind:selected={$_input.graph.x.key} _input={_input}/></td>
+        <td>Select Y</td>
+        <td><OutputSelector bind:selected={$_input.graph.y.key} _output={_output}/></td>
+        <td>
+          <button type="button"
+            class="btn btn-outline-secondary btn-sm"
+            on:click={handleTable}>
+            {showTable ? 'Hide Graph Data' : 'Show Graph Data'}
+          </button>
+        </td>
       </tr>
-      {#each $_input.graph.x.values[$_input.uomSlate] as x, idx}
-        <tr>
-          <td>{idx}</td>
-          <td>{x}</td>
-          <td>{$_input.graph.y.values[$_input.uomSlate][idx]}</td>
-        </tr>
-        {/each}
     </table>
   </div>
-{/if}
+
+  <p></p>
+  {#if showTable }
+    <div transition:fade>
+      <table>
+        <tr>
+          <td>Idx</td>
+          <td align='right'>{xLabel}</td>
+          <td align='right'>{yLabel}</td>
+        </tr>
+        {#each $_input.graph.x.values[$_input.uomSlate] as x, idx}
+          <tr>
+            <td>{idx}</td>
+            <td>{x}</td>
+            <td>{$_input.graph.y.values[$_input.uomSlate][idx]}</td>
+          </tr>
+          {/each}
+      </table>
+    </div>
+  {/if}
 </div>
