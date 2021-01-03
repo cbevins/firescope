@@ -2,7 +2,7 @@
   import BehaviorSelector from '../input/BehaviorSelector.svelte'
 
   export let width
-  export let height
+  // export let height
   export let _input
   export let _output
 
@@ -274,9 +274,9 @@
   .compass-text {
     font: normal 6px sans-serif;
   }
-  .info-text {
+  /* .info-text {
     font: normal 4px sans-serif;
-  }
+  } */
 	.major-line {
 		stroke: #111;
 		stroke-width: 1;
