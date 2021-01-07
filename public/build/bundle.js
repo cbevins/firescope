@@ -878,13 +878,13 @@ var app = (function () {
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[30] = list[i];
+    	child_ctx[29] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[33] = list[i];
+    	child_ctx[32] = list[i];
     	return child_ctx;
     }
 
@@ -895,7 +895,7 @@ var app = (function () {
     	let line0_y__value_1;
     	let line0_transform_value;
     	let text_1;
-    	let t_value = /*p*/ ctx[33].text + "";
+    	let t_value = /*p*/ ctx[32].text + "";
     	let t;
     	let text_1_x_value;
     	let text_1_y_value;
@@ -915,27 +915,27 @@ var app = (function () {
     			t = text(t_value);
     			line1 = svg_element("line");
     			line2 = svg_element("line");
-    			attr_dev(line0, "class", "major-line svelte-1cyz9fv");
+    			attr_dev(line0, "class", "major-line svelte-1gz3hfv");
     			attr_dev(line0, "y1", line0_y__value = /*compass*/ ctx[13].r - 15);
     			attr_dev(line0, "y2", line0_y__value_1 = /*compass*/ ctx[13].r);
-    			attr_dev(line0, "transform", line0_transform_value = "" + (/*center*/ ctx[14] + " rotate(" + /*p*/ ctx[33].deg + ")"));
-    			add_location(line0, file$1, 144, 8, 5447);
-    			attr_dev(text_1, "class", "major-text svelte-1cyz9fv");
+    			attr_dev(line0, "transform", line0_transform_value = "" + (/*center*/ ctx[14] + " rotate(" + /*p*/ ctx[32].deg + ")"));
+    			add_location(line0, file$1, 144, 8, 5450);
+    			attr_dev(text_1, "class", "major-text svelte-1gz3hfv");
     			attr_dev(text_1, "dominant-baseline", "middle");
     			attr_dev(text_1, "text-anchor", "middle");
-    			attr_dev(text_1, "x", text_1_x_value = /*p*/ ctx[33].x);
-    			attr_dev(text_1, "y", text_1_y_value = /*p*/ ctx[33].y);
-    			add_location(text_1, file$1, 145, 8, 5552);
-    			attr_dev(line1, "class", "minor-line svelte-1cyz9fv");
+    			attr_dev(text_1, "x", text_1_x_value = /*p*/ ctx[32].x);
+    			attr_dev(text_1, "y", text_1_y_value = /*p*/ ctx[32].y);
+    			add_location(text_1, file$1, 145, 8, 5555);
+    			attr_dev(line1, "class", "minor-line svelte-1gz3hfv");
     			attr_dev(line1, "y1", line1_y__value = /*compass*/ ctx[13].r - 10);
     			attr_dev(line1, "y2", line1_y__value_1 = /*compass*/ ctx[13].r);
-    			attr_dev(line1, "transform", line1_transform_value = "" + (/*center*/ ctx[14] + " rotate(" + (/*p*/ ctx[33].deg + 15) + ")"));
-    			add_location(line1, file$1, 147, 8, 5675);
-    			attr_dev(line2, "class", "minor-line svelte-1cyz9fv");
+    			attr_dev(line1, "transform", line1_transform_value = "" + (/*center*/ ctx[14] + " rotate(" + (/*p*/ ctx[32].deg + 15) + ")"));
+    			add_location(line1, file$1, 147, 8, 5678);
+    			attr_dev(line2, "class", "minor-line svelte-1gz3hfv");
     			attr_dev(line2, "y1", line2_y__value = /*compass*/ ctx[13].r - 10);
     			attr_dev(line2, "y2", line2_y__value_1 = /*compass*/ ctx[13].r);
-    			attr_dev(line2, "transform", line2_transform_value = "" + (/*center*/ ctx[14] + " rotate(" + (/*p*/ ctx[33].deg + 30) + ")"));
-    			add_location(line2, file$1, 148, 8, 5783);
+    			attr_dev(line2, "transform", line2_transform_value = "" + (/*center*/ ctx[14] + " rotate(" + (/*p*/ ctx[32].deg + 30) + ")"));
+    			add_location(line2, file$1, 148, 8, 5786);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, line0, anchor);
@@ -975,25 +975,25 @@ var app = (function () {
     		c: function create() {
     			ellipse = svg_element("ellipse");
     			attr_dev(ellipse, "cx", "0");
-    			attr_dev(ellipse, "cy", ellipse_cy_value = (1 - /*f*/ ctx[30]) * /*fire*/ ctx[12].ign.y);
-    			attr_dev(ellipse, "rx", ellipse_rx_value = /*f*/ ctx[30] * /*fire*/ ctx[12].x);
-    			attr_dev(ellipse, "ry", ellipse_ry_value = /*f*/ ctx[30] * /*fire*/ ctx[12].r);
+    			attr_dev(ellipse, "cy", ellipse_cy_value = (1 - /*f*/ ctx[29]) * /*fire*/ ctx[12].ign.y);
+    			attr_dev(ellipse, "rx", ellipse_rx_value = /*f*/ ctx[29] * /*fire*/ ctx[12].x);
+    			attr_dev(ellipse, "ry", ellipse_ry_value = /*f*/ ctx[29] * /*fire*/ ctx[12].r);
     			attr_dev(ellipse, "fill", "url(#fireGradient)");
-    			add_location(ellipse, file$1, 162, 10, 6361);
+    			add_location(ellipse, file$1, 162, 10, 6364);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, ellipse, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*fire*/ 4096 && ellipse_cy_value !== (ellipse_cy_value = (1 - /*f*/ ctx[30]) * /*fire*/ ctx[12].ign.y)) {
+    			if (dirty[0] & /*fire*/ 4096 && ellipse_cy_value !== (ellipse_cy_value = (1 - /*f*/ ctx[29]) * /*fire*/ ctx[12].ign.y)) {
     				attr_dev(ellipse, "cy", ellipse_cy_value);
     			}
 
-    			if (dirty[0] & /*fire*/ 4096 && ellipse_rx_value !== (ellipse_rx_value = /*f*/ ctx[30] * /*fire*/ ctx[12].x)) {
+    			if (dirty[0] & /*fire*/ 4096 && ellipse_rx_value !== (ellipse_rx_value = /*f*/ ctx[29] * /*fire*/ ctx[12].x)) {
     				attr_dev(ellipse, "rx", ellipse_rx_value);
     			}
 
-    			if (dirty[0] & /*fire*/ 4096 && ellipse_ry_value !== (ellipse_ry_value = /*f*/ ctx[30] * /*fire*/ ctx[12].r)) {
+    			if (dirty[0] & /*fire*/ 4096 && ellipse_ry_value !== (ellipse_ry_value = /*f*/ ctx[29] * /*fire*/ ctx[12].r)) {
     				attr_dev(ellipse, "ry", ellipse_ry_value);
     			}
     		},
@@ -1178,193 +1178,193 @@ var app = (function () {
     			use6 = svg_element("use");
     			use7 = svg_element("use");
     			attr_dev(circle0, "r", circle0_r_value = /*compass*/ ctx[13].r);
-    			attr_dev(circle0, "class", "compass-face svelte-1cyz9fv");
+    			attr_dev(circle0, "class", "compass-face svelte-1gz3hfv");
     			attr_dev(circle0, "transform", circle0_transform_value = "translate(" + /*compass*/ ctx[13].x + "," + /*compass*/ ctx[13].y + ")");
-    			add_location(circle0, file$1, 140, 6, 5290);
+    			add_location(circle0, file$1, 140, 6, 5293);
     			attr_dev(symbol0, "id", "fireCompass");
-    			add_location(symbol0, file$1, 139, 4, 5257);
+    			add_location(symbol0, file$1, 139, 4, 5260);
     			attr_dev(stop0, "offset", "0%");
     			set_style(stop0, "stop-color", "rgb(255,255,0)");
     			set_style(stop0, "stop-opacity", "1");
-    			add_location(stop0, file$1, 153, 6, 5991);
+    			add_location(stop0, file$1, 153, 6, 5994);
     			attr_dev(stop1, "offset", "100%");
     			set_style(stop1, "stop-color", "rgb(255,0,0)");
     			set_style(stop1, "stop-opacity", "1");
-    			add_location(stop1, file$1, 154, 6, 6067);
+    			add_location(stop1, file$1, 154, 6, 6070);
     			attr_dev(linearGradient0, "id", "fireGradient");
     			attr_dev(linearGradient0, "x1", "0%");
     			attr_dev(linearGradient0, "y1", "0%");
     			attr_dev(linearGradient0, "x2", "0%");
     			attr_dev(linearGradient0, "y2", "100%");
-    			add_location(linearGradient0, file$1, 152, 4, 5916);
-    			attr_dev(line0, "class", "minor-line svelte-1cyz9fv");
+    			add_location(linearGradient0, file$1, 152, 4, 5919);
+    			attr_dev(line0, "class", "minor-line svelte-1gz3hfv");
     			attr_dev(line0, "x1", line0_x__value = -/*fire*/ ctx[12].r - 2);
     			attr_dev(line0, "y1", "0");
     			attr_dev(line0, "x2", line0_x__value_1 = /*fire*/ ctx[12].r + 2);
     			attr_dev(line0, "y2", "0");
     			attr_dev(line0, "transform", "rotate(90)");
-    			add_location(line0, file$1, 165, 8, 6508);
-    			attr_dev(line1, "class", "minor-line svelte-1cyz9fv");
+    			add_location(line0, file$1, 165, 8, 6511);
+    			attr_dev(line1, "class", "minor-line svelte-1gz3hfv");
     			attr_dev(line1, "x1", line1_x__value = -/*fire*/ ctx[12].width + 2);
     			attr_dev(line1, "y1", "0");
     			attr_dev(line1, "x2", line1_x__value_1 = /*fire*/ ctx[12].width - 2);
     			attr_dev(line1, "y2", "0");
-    			add_location(line1, file$1, 168, 8, 6647);
+    			add_location(line1, file$1, 168, 8, 6650);
     			attr_dev(circle1, "cx", circle1_cx_value = /*fire*/ ctx[12].ign.x);
     			attr_dev(circle1, "cy", circle1_cy_value = /*fire*/ ctx[12].ign.y);
     			attr_dev(circle1, "r", "1");
     			attr_dev(circle1, "stroke", "black");
     			attr_dev(circle1, "stroke-width", ".5");
     			attr_dev(circle1, "fill", "red");
-    			add_location(circle1, file$1, 170, 8, 6766);
-    			attr_dev(line2, "class", "minor-line svelte-1cyz9fv");
+    			add_location(circle1, file$1, 170, 8, 6769);
+    			attr_dev(line2, "class", "minor-line svelte-1gz3hfv");
     			attr_dev(line2, "x1", line2_x__value = /*fire*/ ctx[12].ign.x);
     			attr_dev(line2, "y1", line2_y__value = /*fire*/ ctx[12].ign.y);
     			attr_dev(line2, "x2", line2_x__value_1 = -/*fire*/ ctx[12].width);
     			attr_dev(line2, "y2", "0");
-    			add_location(line2, file$1, 171, 8, 6867);
-    			attr_dev(line3, "class", "minor-line svelte-1cyz9fv");
+    			add_location(line2, file$1, 171, 8, 6870);
+    			attr_dev(line3, "class", "minor-line svelte-1gz3hfv");
     			attr_dev(line3, "x1", line3_x__value = /*fire*/ ctx[12].ign.x);
     			attr_dev(line3, "y1", line3_y__value = /*fire*/ ctx[12].ign.y);
     			attr_dev(line3, "x2", line3_x__value_1 = /*fire*/ ctx[12].width);
     			attr_dev(line3, "y2", "0");
-    			add_location(line3, file$1, 173, 8, 6969);
+    			add_location(line3, file$1, 173, 8, 6972);
     			attr_dev(g0, "transform", g0_transform_value = "" + (/*center*/ ctx[14] + " rotate(" + (/*fireHeadingFromNorth*/ ctx[3] + 180) + ")"));
-    			add_location(g0, file$1, 159, 6, 6222);
+    			add_location(g0, file$1, 159, 6, 6225);
     			attr_dev(symbol1, "id", "fireEllipse");
-    			add_location(symbol1, file$1, 158, 4, 6190);
+    			add_location(symbol1, file$1, 158, 4, 6193);
     			attr_dev(text0, "x", text0_x_value = /*fire*/ ctx[12].head.x);
     			attr_dev(text0, "y", text0_y_value = /*fire*/ ctx[12].head.y);
-    			attr_dev(text0, "class", "compass-text svelte-1cyz9fv");
+    			attr_dev(text0, "class", "compass-text svelte-1gz3hfv");
     			attr_dev(text0, "dominant-baseline", "middle");
     			attr_dev(text0, "text-anchor", "middle");
-    			add_location(text0, file$1, 179, 6, 7128);
+    			add_location(text0, file$1, 179, 6, 7131);
     			attr_dev(text1, "x", text1_x_value = /*fire*/ ctx[12].back.x);
     			attr_dev(text1, "y", text1_y_value = /*fire*/ ctx[12].back.y);
-    			attr_dev(text1, "class", "compass-text svelte-1cyz9fv");
+    			attr_dev(text1, "class", "compass-text svelte-1gz3hfv");
     			attr_dev(text1, "dominant-baseline", "middle");
     			attr_dev(text1, "text-anchor", "middle");
-    			add_location(text1, file$1, 183, 6, 7289);
+    			add_location(text1, file$1, 183, 6, 7292);
     			attr_dev(text2, "x", text2_x_value = /*fire*/ ctx[12].flank.x);
     			attr_dev(text2, "y", text2_y_value = /*fire*/ ctx[12].flank.y);
-    			attr_dev(text2, "class", "compass-text svelte-1cyz9fv");
+    			attr_dev(text2, "class", "compass-text svelte-1gz3hfv");
     			attr_dev(text2, "dominant-baseline", "middle");
     			attr_dev(text2, "text-anchor", "middle");
-    			add_location(text2, file$1, 187, 6, 7450);
+    			add_location(text2, file$1, 187, 6, 7453);
     			attr_dev(symbol2, "id", "fireEllipseText");
-    			add_location(symbol2, file$1, 178, 4, 7092);
+    			add_location(symbol2, file$1, 178, 4, 7095);
     			attr_dev(stop2, "offset", "0%");
     			attr_dev(stop2, "stop-color", "white");
     			attr_dev(stop2, "stop-opacity", "0");
-    			add_location(stop2, file$1, 195, 6, 7727);
+    			add_location(stop2, file$1, 195, 6, 7730);
     			attr_dev(stop3, "offset", "100%");
     			attr_dev(stop3, "stop-color", "black");
     			attr_dev(stop3, "stop-opacity", ".5");
-    			add_location(stop3, file$1, 196, 6, 7790);
+    			add_location(stop3, file$1, 196, 6, 7793);
     			attr_dev(radialGradient, "id", "slopeBubbleGradient");
     			attr_dev(radialGradient, "cx", "50%");
     			attr_dev(radialGradient, "cy", "50%");
     			attr_dev(radialGradient, "r", "80%");
     			attr_dev(radialGradient, "fx", "50%");
     			attr_dev(radialGradient, "fy", "50%");
-    			add_location(radialGradient, file$1, 193, 4, 7627);
+    			add_location(radialGradient, file$1, 193, 4, 7630);
     			attr_dev(ellipse, "cx", "0");
     			attr_dev(ellipse, "cy", "45");
     			attr_dev(ellipse, "rx", "5");
     			attr_dev(ellipse, "ry", "5");
     			set_style(ellipse, "visibility", /*bubble*/ ctx[11].visible);
     			attr_dev(ellipse, "fill", "url(#slopeBubbleGradient)");
-    			add_location(ellipse, file$1, 201, 8, 7959);
-    			attr_dev(line4, "class", "slope-pointer svelte-1cyz9fv");
+    			add_location(ellipse, file$1, 201, 8, 7962);
+    			attr_dev(line4, "class", "slope-pointer svelte-1gz3hfv");
     			attr_dev(line4, "y1", "48");
     			attr_dev(line4, "y2", "54");
     			set_style(line4, "visibility", /*bubble*/ ctx[11].visible);
-    			add_location(line4, file$1, 204, 8, 8098);
+    			add_location(line4, file$1, 204, 8, 8101);
     			attr_dev(g1, "transform", g1_transform_value = "" + (/*center*/ ctx[14] + " rotate(" + /*aspect*/ ctx[2] + ")"));
-    			add_location(g1, file$1, 200, 6, 7909);
+    			add_location(g1, file$1, 200, 6, 7912);
     			attr_dev(symbol3, "id", "slopeBubble");
-    			add_location(symbol3, file$1, 199, 4, 7877);
+    			add_location(symbol3, file$1, 199, 4, 7880);
     			attr_dev(text3, "x", text3_x_value = /*bubble*/ ctx[11].xup);
     			attr_dev(text3, "y", text3_y_value = /*bubble*/ ctx[11].yup);
-    			attr_dev(text3, "class", "compass-text svelte-1cyz9fv");
+    			attr_dev(text3, "class", "compass-text svelte-1gz3hfv");
     			attr_dev(text3, "dominant-baseline", "middle");
     			attr_dev(text3, "text-anchor", "middle");
     			set_style(text3, "visibility", /*bubble*/ ctx[11].visible);
-    			add_location(text3, file$1, 210, 6, 8258);
+    			add_location(text3, file$1, 210, 6, 8261);
     			attr_dev(symbol4, "id", "slopeBubbleText");
-    			add_location(symbol4, file$1, 209, 4, 8222);
+    			add_location(symbol4, file$1, 209, 4, 8225);
     			attr_dev(stop4, "offset", "0%");
     			set_style(stop4, "stop-color", "rgb(200,200,240)");
     			set_style(stop4, "stop-opacity", "1");
-    			add_location(stop4, file$1, 217, 6, 8551);
+    			add_location(stop4, file$1, 217, 6, 8554);
     			attr_dev(stop5, "offset", "100%");
     			set_style(stop5, "stop-color", "blue");
     			set_style(stop5, "stop-opacity", "1");
-    			add_location(stop5, file$1, 218, 6, 8629);
+    			add_location(stop5, file$1, 218, 6, 8632);
     			attr_dev(linearGradient1, "id", "windGradient");
     			attr_dev(linearGradient1, "x1", "0%");
     			attr_dev(linearGradient1, "y1", "0%");
     			attr_dev(linearGradient1, "x2", "0%");
     			attr_dev(linearGradient1, "y2", "100%");
-    			add_location(linearGradient1, file$1, 216, 4, 8476);
+    			add_location(linearGradient1, file$1, 216, 4, 8479);
     			attr_dev(polygon, "class", "wind-needle");
     			set_style(polygon, "visibility", /*wind*/ ctx[7].visible);
     			attr_dev(polygon, "fill", "url(#windGradient)");
     			attr_dev(polygon, "points", "0,44 6,38, 4,38, 4,30, -4,30, -4,38, -6,38");
-    			add_location(polygon, file$1, 223, 8, 8806);
+    			add_location(polygon, file$1, 223, 8, 8809);
     			attr_dev(g2, "transform", g2_transform_value = "" + (/*center*/ ctx[14] + " rotate(" + /*windFromNorth*/ ctx[5] + ")"));
-    			add_location(g2, file$1, 222, 6, 8749);
+    			add_location(g2, file$1, 222, 6, 8752);
     			attr_dev(symbol5, "id", "windNeedle");
-    			add_location(symbol5, file$1, 221, 4, 8718);
+    			add_location(symbol5, file$1, 221, 4, 8721);
     			attr_dev(text4, "x", text4_x_value = /*wind*/ ctx[7].xup);
     			attr_dev(text4, "y", text4_y_value = /*wind*/ ctx[7].yup);
-    			attr_dev(text4, "class", "compass-text svelte-1cyz9fv");
+    			attr_dev(text4, "class", "compass-text svelte-1gz3hfv");
     			attr_dev(text4, "dominant-baseline", "middle");
     			attr_dev(text4, "text-anchor", "middle");
     			set_style(text4, "visibility", /*wind*/ ctx[7].visible);
-    			add_location(text4, file$1, 232, 6, 9101);
+    			add_location(text4, file$1, 232, 6, 9104);
     			attr_dev(symbol6, "id", "windNeedleText");
-    			add_location(symbol6, file$1, 231, 4, 9066);
-    			add_location(defs, file$1, 138, 2, 5246);
+    			add_location(symbol6, file$1, 231, 4, 9069);
+    			add_location(defs, file$1, 138, 2, 5249);
     			attr_dev(svg0, "class", "defs-only");
     			attr_dev(svg0, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg0, "width", "0");
     			attr_dev(svg0, "height", "0");
     			set_style(svg0, "display", "block");
-    			add_location(svg0, file$1, 136, 0, 5136);
+    			add_location(svg0, file$1, 136, 0, 5139);
     			xlink_attr(use0, "xlink:href", "#fireCompass");
     			attr_dev(use0, "transform", /*compassPos*/ ctx[15]);
-    			add_location(use0, file$1, 244, 8, 9444);
+    			add_location(use0, file$1, 244, 8, 9447);
     			xlink_attr(use1, "xlink:href", "#slopeBubble");
     			attr_dev(use1, "transform", /*compassPos*/ ctx[15]);
-    			add_location(use1, file$1, 245, 8, 9508);
+    			add_location(use1, file$1, 245, 8, 9511);
     			xlink_attr(use2, "xlink:href", "#slopeBubbleText");
     			attr_dev(use2, "transform", /*compassPos*/ ctx[15]);
-    			add_location(use2, file$1, 246, 8, 9572);
+    			add_location(use2, file$1, 246, 8, 9575);
     			xlink_attr(use3, "xlink:href", "#windNeedle");
     			attr_dev(use3, "transform", /*compassPos*/ ctx[15]);
-    			add_location(use3, file$1, 247, 8, 9640);
+    			add_location(use3, file$1, 247, 8, 9643);
     			xlink_attr(use4, "xlink:href", "#windNeedleText");
     			attr_dev(use4, "transform", /*compassPos*/ ctx[15]);
-    			add_location(use4, file$1, 248, 8, 9703);
+    			add_location(use4, file$1, 248, 8, 9706);
     			xlink_attr(use5, "xlink:href", "#fireEllipse");
     			attr_dev(use5, "transform", /*compassPos*/ ctx[15]);
-    			add_location(use5, file$1, 249, 8, 9770);
+    			add_location(use5, file$1, 249, 8, 9773);
     			xlink_attr(use6, "xlink:href", "#fireEllipseText");
     			attr_dev(use6, "transform", /*compassPos*/ ctx[15]);
-    			add_location(use6, file$1, 250, 8, 9834);
+    			add_location(use6, file$1, 250, 8, 9837);
     			xlink_attr(use7, "xlink:href", "#fireBox");
     			attr_dev(use7, "transform", "translate(0,0)");
-    			add_location(use7, file$1, 251, 8, 9902);
+    			add_location(use7, file$1, 251, 8, 9905);
     			attr_dev(svg1, "viewBox", viewbox);
     			attr_dev(svg1, "width", "100%");
     			attr_dev(svg1, "height", "100%");
-    			add_location(svg1, file$1, 243, 6, 9384);
-    			add_location(div0, file$1, 242, 4, 9372);
+    			add_location(svg1, file$1, 243, 6, 9387);
+    			add_location(div0, file$1, 242, 4, 9375);
     			attr_dev(div1, "class", "col");
-    			add_location(div1, file$1, 241, 2, 9350);
+    			add_location(div1, file$1, 241, 2, 9353);
     			attr_dev(div2, "class", "row");
-    			add_location(div2, file$1, 240, 0, 9330);
+    			add_location(div2, file$1, 240, 0, 9333);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1650,18 +1650,17 @@ var app = (function () {
     function instance$1($$self, $$props, $$invalidate) {
     	let $_input,
     		$$unsubscribe__input = noop,
-    		$$subscribe__input = () => ($$unsubscribe__input(), $$unsubscribe__input = subscribe(_input, $$value => $$invalidate(26, $_input = $$value)), _input);
+    		$$subscribe__input = () => ($$unsubscribe__input(), $$unsubscribe__input = subscribe(_input, $$value => $$invalidate(25, $_input = $$value)), _input);
 
     	let $_output,
     		$$unsubscribe__output = noop,
-    		$$subscribe__output = () => ($$unsubscribe__output(), $$unsubscribe__output = subscribe(_output, $$value => $$invalidate(27, $_output = $$value)), _output);
+    		$$subscribe__output = () => ($$unsubscribe__output(), $$unsubscribe__output = subscribe(_output, $$value => $$invalidate(26, $_output = $$value)), _output);
 
     	$$self.$$.on_destroy.push(() => $$unsubscribe__input());
     	$$self.$$.on_destroy.push(() => $$unsubscribe__output());
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("SvgFireScope", slots, []);
     	let { width } = $$props;
-    	let { height } = $$props;
     	let { _input } = $$props;
     	validate_store(_input, "_input");
     	$$subscribe__input();
@@ -1723,7 +1722,7 @@ var app = (function () {
     	let bubble = { x: 0, y: 0 };
 
     	let fire = { x: 0, r: 35 };
-    	const writable_props = ["width", "height", "_input", "_output"];
+    	const writable_props = ["width", "_input", "_output"];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<SvgFireScope> was created with unknown prop '${key}'`);
@@ -1731,7 +1730,6 @@ var app = (function () {
 
     	$$self.$$set = $$props => {
     		if ("width" in $$props) $$invalidate(17, width = $$props.width);
-    		if ("height" in $$props) $$invalidate(18, height = $$props.height);
     		if ("_input" in $$props) $$subscribe__input($$invalidate(0, _input = $$props._input));
     		if ("_output" in $$props) $$subscribe__output($$invalidate(1, _output = $$props._output));
     	};
@@ -1739,7 +1737,6 @@ var app = (function () {
     	$$self.$capture_state = () => ({
     		BehaviorSelector,
     		width,
-    		height,
     		_input,
     		_output,
     		atX,
@@ -1776,25 +1773,24 @@ var app = (function () {
 
     	$$self.$inject_state = $$props => {
     		if ("width" in $$props) $$invalidate(17, width = $$props.width);
-    		if ("height" in $$props) $$invalidate(18, height = $$props.height);
     		if ("_input" in $$props) $$subscribe__input($$invalidate(0, _input = $$props._input));
     		if ("_output" in $$props) $$subscribe__output($$invalidate(1, _output = $$props._output));
     		if ("aspect" in $$props) $$invalidate(2, aspect = $$props.aspect);
-    		if ("ellipseValue" in $$props) $$invalidate(28, ellipseValue = $$props.ellipseValue);
+    		if ("ellipseValue" in $$props) $$invalidate(27, ellipseValue = $$props.ellipseValue);
     		if ("fireHeadingFromNorth" in $$props) $$invalidate(3, fireHeadingFromNorth = $$props.fireHeadingFromNorth);
-    		if ("fireBackingFromNorth" in $$props) $$invalidate(19, fireBackingFromNorth = $$props.fireBackingFromNorth);
+    		if ("fireBackingFromNorth" in $$props) $$invalidate(18, fireBackingFromNorth = $$props.fireBackingFromNorth);
     		if ("slope" in $$props) $$invalidate(4, slope = $$props.slope);
-    		if ("upslope" in $$props) $$invalidate(20, upslope = $$props.upslope);
+    		if ("upslope" in $$props) $$invalidate(19, upslope = $$props.upslope);
     		if ("windFromNorth" in $$props) $$invalidate(5, windFromNorth = $$props.windFromNorth);
-    		if ("windHeading" in $$props) $$invalidate(21, windHeading = $$props.windHeading);
+    		if ("windHeading" in $$props) $$invalidate(20, windHeading = $$props.windHeading);
     		if ("windSpeed" in $$props) $$invalidate(6, windSpeed = $$props.windSpeed);
     		if ("wind" in $$props) $$invalidate(7, wind = $$props.wind);
-    		if ("uom" in $$props) $$invalidate(22, uom = $$props.uom);
+    		if ("uom" in $$props) $$invalidate(21, uom = $$props.uom);
     		if ("headingValue" in $$props) $$invalidate(8, headingValue = $$props.headingValue);
     		if ("flankingValue" in $$props) $$invalidate(9, flankingValue = $$props.flankingValue);
     		if ("backingValue" in $$props) $$invalidate(10, backingValue = $$props.backingValue);
-    		if ("headDist" in $$props) $$invalidate(23, headDist = $$props.headDist);
-    		if ("backDist" in $$props) $$invalidate(24, backDist = $$props.backDist);
+    		if ("headDist" in $$props) $$invalidate(22, headDist = $$props.headDist);
+    		if ("backDist" in $$props) $$invalidate(23, backDist = $$props.backDist);
     		if ("vp" in $$props) vp = $$props.vp;
     		if ("compass" in $$props) $$invalidate(13, compass = $$props.compass);
     		if ("bubble" in $$props) $$invalidate(11, bubble = $$props.bubble);
@@ -1806,24 +1802,24 @@ var app = (function () {
     	}
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty[0] & /*$_input, aspect, upslope, slope, windFromNorth, windHeading, windSpeed, $_output, fireHeadingFromNorth, fire, fireBackingFromNorth, width, backDist, headDist, uom*/ 234492028) {
+    		if ($$self.$$.dirty[0] & /*$_input, aspect, upslope, slope, windFromNorth, windHeading, windSpeed, $_output, fireHeadingFromNorth, fire, fireBackingFromNorth, width, backDist, headDist, uom*/ 117313660) {
     			// The following is REQUIRED for units auto-updating
     			 {
-    				$$invalidate(22, uom = $_input.uomSlate);
+    				$$invalidate(21, uom = $_input.uomSlate);
     				$$invalidate(4, slope = $_input.slopeSteepnessRatio.value.base);
     				$$invalidate(2, aspect = $_input.slopeDirectionAspect.value.base);
-    				$$invalidate(20, upslope = opposite(aspect));
+    				$$invalidate(19, upslope = opposite(aspect));
     				$$invalidate(11, bubble.xup = atX(compass.x, compass.r - 5, upslope), bubble);
     				$$invalidate(11, bubble.yup = atY(compass.y, compass.r - 5, upslope), bubble);
     				$$invalidate(11, bubble.visible = slope < 0.01 ? "hidden" : "visible", bubble);
     				$$invalidate(5, windFromNorth = $_input.windDirectionSourceFromNorth.value.base);
-    				$$invalidate(21, windHeading = opposite(windFromNorth));
+    				$$invalidate(20, windHeading = opposite(windFromNorth));
     				$$invalidate(6, windSpeed = $_input.windSpeedAtMidflame.value.base);
     				$$invalidate(7, wind.xup = atX(compass.x, compass.r - 12, windHeading), wind);
     				$$invalidate(7, wind.yup = atY(compass.y, compass.r - 12, windHeading), wind);
     				$$invalidate(7, wind.visible = windSpeed < 0.1 ? "hidden" : "visible", wind);
     				$$invalidate(3, fireHeadingFromNorth = $_output.fireHeadingFromNorth.value.base);
-    				$$invalidate(19, fireBackingFromNorth = opposite(fireHeadingFromNorth));
+    				$$invalidate(18, fireBackingFromNorth = opposite(fireHeadingFromNorth));
     				$$invalidate(12, fire.x = fire.r / $_output.lengthToWidthRatio.value.base, fire);
 
     				$$invalidate(
@@ -1848,8 +1844,8 @@ var app = (function () {
     				$$invalidate(12, fire.width = -fire.r / fire.lwr, fire);
     				$$invalidate(12, fire.flank = { deg: fireHeadingFromNorth + 90 }, fire);
     				($$invalidate(12, fire.flank.x = atX(compass.x, fire.width, fire.flank.deg), fire), $$invalidate(12, fire.flank.y = atY(compass.y, fire.width, fire.flank.deg), fire), $$invalidate(12, fire.flank0 = { x: -fire.r, y: width }, fire));
-    				$$invalidate(23, headDist = $_output.headingSpreadDistance.value.base);
-    				$$invalidate(24, backDist = $_output.backingSpreadDistance.value.base);
+    				$$invalidate(22, headDist = $_output.headingSpreadDistance.value.base);
+    				$$invalidate(23, backDist = $_output.backingSpreadDistance.value.base);
     				let radius = (backDist + headDist) / 2;
     				let ratio = radius > 0 ? (headDist - radius) / radius : 0;
     				$$invalidate(12, fire.ign = { x: 0, y: -fire.r * ratio }, fire);
@@ -1894,29 +1890,14 @@ var app = (function () {
     		center,
     		compassPos,
     		points,
-    		width,
-    		height
+    		width
     	];
     }
 
     class SvgFireScope extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-
-    		init(
-    			this,
-    			options,
-    			instance$1,
-    			create_fragment$1,
-    			safe_not_equal,
-    			{
-    				width: 17,
-    				height: 18,
-    				_input: 0,
-    				_output: 1
-    			},
-    			[-1, -1]
-    		);
+    		init(this, options, instance$1, create_fragment$1, safe_not_equal, { width: 17, _input: 0, _output: 1 }, [-1, -1]);
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -1930,10 +1911,6 @@ var app = (function () {
 
     		if (/*width*/ ctx[17] === undefined && !("width" in props)) {
     			console.warn("<SvgFireScope> was created without expected prop 'width'");
-    		}
-
-    		if (/*height*/ ctx[18] === undefined && !("height" in props)) {
-    			console.warn("<SvgFireScope> was created without expected prop 'height'");
     		}
 
     		if (/*_input*/ ctx[0] === undefined && !("_input" in props)) {
@@ -1950,14 +1927,6 @@ var app = (function () {
     	}
 
     	set width(value) {
-    		throw new Error("<SvgFireScope>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	get height() {
-    		throw new Error("<SvgFireScope>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set height(value) {
     		throw new Error("<SvgFireScope>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
@@ -26616,7 +26585,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (89:0) {#if showTable }
+    // (94:2) {#if showTable }
     function create_if_block$2(ctx) {
     	let div;
     	let table;
@@ -26658,14 +26627,14 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(td0, file$8, 92, 8, 2360);
+    			add_location(td0, file$8, 97, 10, 2512);
     			attr_dev(td1, "align", "right");
-    			add_location(td1, file$8, 93, 8, 2381);
+    			add_location(td1, file$8, 98, 10, 2535);
     			attr_dev(td2, "align", "right");
-    			add_location(td2, file$8, 94, 8, 2421);
-    			add_location(tr, file$8, 91, 6, 2347);
-    			add_location(table, file$8, 90, 4, 2333);
-    			add_location(div, file$8, 89, 2, 2307);
+    			add_location(td2, file$8, 99, 10, 2577);
+    			add_location(tr, file$8, 96, 8, 2497);
+    			add_location(table, file$8, 95, 6, 2481);
+    			add_location(div, file$8, 94, 4, 2453);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -26740,14 +26709,14 @@ var app = (function () {
     		block,
     		id: create_if_block$2.name,
     		type: "if",
-    		source: "(89:0) {#if showTable }",
+    		source: "(94:2) {#if showTable }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (97:6) {#each $_input.graph.x.values[$_input.uomSlate] as x, idx}
+    // (102:8) {#each $_input.graph.x.values[$_input.uomSlate] as x, idx}
     function create_each_block$7(ctx) {
     	let tr;
     	let td0;
@@ -26774,10 +26743,10 @@ var app = (function () {
     			td2 = element("td");
     			t4 = text(t4_value);
     			t5 = space();
-    			add_location(td0, file$8, 98, 10, 2553);
-    			add_location(td1, file$8, 99, 10, 2578);
-    			add_location(td2, file$8, 100, 10, 2601);
-    			add_location(tr, file$8, 97, 8, 2538);
+    			add_location(td0, file$8, 103, 12, 2717);
+    			add_location(td1, file$8, 104, 12, 2744);
+    			add_location(td2, file$8, 105, 12, 2769);
+    			add_location(tr, file$8, 102, 10, 2700);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -26804,7 +26773,7 @@ var app = (function () {
     		block,
     		id: create_each_block$7.name,
     		type: "each",
-    		source: "(97:6) {#each $_input.graph.x.values[$_input.uomSlate] as x, idx}",
+    		source: "(102:8) {#each $_input.graph.x.values[$_input.uomSlate] as x, idx}",
     		ctx
     	});
 
@@ -26812,6 +26781,7 @@ var app = (function () {
     }
 
     function create_fragment$8(ctx) {
+    	let div2;
     	let div1;
     	let div0;
     	let canvas;
@@ -26882,6 +26852,7 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
+    			div2 = element("div");
     			div1 = element("div");
     			div0 = element("div");
     			canvas = element("canvas");
@@ -26889,13 +26860,13 @@ var app = (function () {
     			table = element("table");
     			tr = element("tr");
     			td0 = element("td");
-    			td0.textContent = "Select X";
+    			td0.textContent = "X";
     			t2 = space();
     			td1 = element("td");
     			create_component(inputselector.$$.fragment);
     			t3 = space();
     			td2 = element("td");
-    			td2.textContent = "Select Y";
+    			td2.textContent = "Y";
     			t5 = space();
     			td3 = element("td");
     			create_component(outputselector.$$.fragment);
@@ -26908,35 +26879,37 @@ var app = (function () {
     			t9 = space();
     			if (if_block) if_block.c();
     			attr_dev(canvas, "id", "myChart");
-    			attr_dev(canvas, "width", "40");
-    			attr_dev(canvas, "height", "20");
-    			add_location(canvas, file$8, 69, 0, 1771);
-    			add_location(td0, file$8, 72, 4, 1844);
-    			add_location(td1, file$8, 73, 4, 1866);
-    			add_location(td2, file$8, 74, 4, 1948);
-    			add_location(td3, file$8, 75, 4, 1970);
+    			attr_dev(canvas, "responsive", "true");
+    			add_location(canvas, file$8, 72, 6, 1856);
+    			attr_dev(div0, "class", "chart-container");
+    			add_location(div0, file$8, 71, 4, 1820);
+    			add_location(td0, file$8, 77, 8, 1948);
+    			add_location(td1, file$8, 78, 8, 1967);
+    			add_location(td2, file$8, 79, 8, 2053);
+    			add_location(td3, file$8, 80, 8, 2072);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "btn btn-outline-secondary btn-sm");
-    			add_location(button, file$8, 77, 6, 2066);
-    			add_location(td4, file$8, 76, 4, 2055);
-    			add_location(tr, file$8, 71, 2, 1835);
-    			add_location(table, file$8, 70, 0, 1825);
-    			attr_dev(div0, "class", "card-body");
-    			add_location(div0, file$8, 67, 6, 1746);
-    			add_location(p, file$8, 87, 0, 2280);
-    			attr_dev(div1, "class", "card");
-    			set_style(div1, "width", "100%");
-    			add_location(div1, file$8, 66, 4, 1700);
+    			add_location(button, file$8, 82, 10, 2176);
+    			add_location(td4, file$8, 81, 8, 2161);
+    			add_location(tr, file$8, 76, 6, 1935);
+    			add_location(table, file$8, 75, 4, 1921);
+    			attr_dev(div1, "class", "card-body");
+    			add_location(div1, file$8, 70, 2, 1792);
+    			add_location(p, file$8, 92, 2, 2422);
+    			attr_dev(div2, "class", "card");
+    			set_style(div2, "width", "100%");
+    			add_location(div2, file$8, 69, 0, 1750);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div1, anchor);
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div1);
     			append_dev(div1, div0);
     			append_dev(div0, canvas);
-    			append_dev(div0, t0);
-    			append_dev(div0, table);
+    			append_dev(div1, t0);
+    			append_dev(div1, table);
     			append_dev(table, tr);
     			append_dev(tr, td0);
     			append_dev(tr, t2);
@@ -26951,10 +26924,10 @@ var app = (function () {
     			append_dev(tr, td4);
     			append_dev(td4, button);
     			append_dev(button, t7);
-    			append_dev(div1, t8);
-    			append_dev(div1, p);
-    			append_dev(div1, t9);
-    			if (if_block) if_block.m(div1, null);
+    			append_dev(div2, t8);
+    			append_dev(div2, p);
+    			append_dev(div2, t9);
+    			if (if_block) if_block.m(div2, null);
     			current = true;
 
     			if (!mounted) {
@@ -26999,7 +26972,7 @@ var app = (function () {
     					if_block = create_if_block$2(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
-    					if_block.m(div1, null);
+    					if_block.m(div2, null);
     				}
     			} else if (if_block) {
     				group_outros();
@@ -27025,7 +26998,7 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div1);
+    			if (detaching) detach_dev(div2);
     			destroy_component(inputselector);
     			destroy_component(outputselector);
     			if (if_block) if_block.d();
@@ -27082,6 +27055,7 @@ var app = (function () {
     				datasets: [{ data: y.values[uom], label: yLabel }]
     			},
     			options: {
+    				animation: { duration: 0 },
     				display: true,
     				scales: {
     					xAxes: [
@@ -44513,43 +44487,55 @@ var app = (function () {
     const file$l = "C:\\cbevins\\dev\\node\\firescope\\src\\component\\app\\InputPanel.svelte";
 
     function create_fragment$l(ctx) {
-    	let div1;
-    	let div0;
     	let fuelselector;
     	let updating_key;
     	let t0;
-    	let div3;
-    	let div2;
     	let unitsselector;
     	let updating_units;
     	let t1;
-    	let div6;
-    	let div4;
+    	let button0;
+    	let t3;
+    	let div1;
+    	let div0;
     	let deadfuelmoisture;
     	let updating_tl1h;
     	let updating_tl10h;
     	let updating_tl100h;
-    	let t2;
-    	let div5;
+    	let t4;
+    	let button1;
+    	let t6;
+    	let div3;
+    	let div2;
     	let livefuelmoisture;
     	let updating_herb;
     	let updating_stem;
-    	let t3;
-    	let div11;
-    	let div7;
+    	let t7;
+    	let button2;
+    	let t9;
+    	let div5;
+    	let div4;
     	let slopeaspect;
     	let updating_steepness;
     	let updating_aspect;
-    	let t4;
-    	let div8;
+    	let t10;
+    	let button3;
+    	let t12;
+    	let div7;
+    	let div6;
     	let windspeeddirection;
     	let updating_speed;
     	let updating_direction;
-    	let t5;
+    	let t13;
+    	let button4;
+    	let t15;
     	let div9;
+    	let div8;
     	let airtemperature;
     	let updating_f;
-    	let t6;
+    	let t16;
+    	let button5;
+    	let t18;
+    	let div11;
     	let div10;
     	let elapsedtime;
     	let updating_minutes;
@@ -44730,87 +44716,165 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			div1 = element("div");
-    			div0 = element("div");
     			create_component(fuelselector.$$.fragment);
     			t0 = space();
-    			div3 = element("div");
-    			div2 = element("div");
     			create_component(unitsselector.$$.fragment);
     			t1 = space();
-    			div6 = element("div");
-    			div4 = element("div");
-    			create_component(deadfuelmoisture.$$.fragment);
-    			t2 = space();
-    			div5 = element("div");
-    			create_component(livefuelmoisture.$$.fragment);
+    			button0 = element("button");
+    			button0.textContent = "Dead Fuel Moisture";
     			t3 = space();
-    			div11 = element("div");
-    			div7 = element("div");
-    			create_component(slopeaspect.$$.fragment);
+    			div1 = element("div");
+    			div0 = element("div");
+    			create_component(deadfuelmoisture.$$.fragment);
     			t4 = space();
-    			div8 = element("div");
-    			create_component(windspeeddirection.$$.fragment);
-    			t5 = space();
-    			div9 = element("div");
-    			create_component(airtemperature.$$.fragment);
+    			button1 = element("button");
+    			button1.textContent = "Live Fuel Moisture";
     			t6 = space();
+    			div3 = element("div");
+    			div2 = element("div");
+    			create_component(livefuelmoisture.$$.fragment);
+    			t7 = space();
+    			button2 = element("button");
+    			button2.textContent = "Slope & Aspect";
+    			t9 = space();
+    			div5 = element("div");
+    			div4 = element("div");
+    			create_component(slopeaspect.$$.fragment);
+    			t10 = space();
+    			button3 = element("button");
+    			button3.textContent = "Wind Speed & Direction";
+    			t12 = space();
+    			div7 = element("div");
+    			div6 = element("div");
+    			create_component(windspeeddirection.$$.fragment);
+    			t13 = space();
+    			button4 = element("button");
+    			button4.textContent = "Air Temperature";
+    			t15 = space();
+    			div9 = element("div");
+    			div8 = element("div");
+    			create_component(airtemperature.$$.fragment);
+    			t16 = space();
+    			button5 = element("button");
+    			button5.textContent = "Elapsed Time";
+    			t18 = space();
+    			div11 = element("div");
     			div10 = element("div");
     			create_component(elapsedtime.$$.fragment);
-    			attr_dev(div0, "class", "col");
-    			add_location(div0, file$l, 18, 2, 711);
-    			attr_dev(div1, "class", "row");
-    			add_location(div1, file$l, 17, 0, 690);
-    			attr_dev(div2, "class", "col");
-    			add_location(div2, file$l, 24, 2, 842);
-    			attr_dev(div3, "class", "row");
-    			add_location(div3, file$l, 23, 0, 821);
-    			attr_dev(div4, "class", "col-6");
-    			add_location(div4, file$l, 30, 2, 955);
-    			attr_dev(div5, "class", "col");
-    			add_location(div5, file$l, 36, 2, 1188);
-    			attr_dev(div6, "class", "row");
-    			add_location(div6, file$l, 29, 0, 934);
-    			attr_dev(div7, "class", "col-4");
-    			add_location(div7, file$l, 44, 2, 1392);
-    			attr_dev(div8, "class", "col-4");
-    			add_location(div8, file$l, 49, 2, 1570);
-    			attr_dev(div9, "class", "col-2");
-    			add_location(div9, file$l, 54, 2, 1762);
-    			attr_dev(div10, "class", "col-2");
-    			add_location(div10, file$l, 58, 2, 1869);
-    			attr_dev(div11, "class", "row");
-    			add_location(div11, file$l, 43, 0, 1371);
+    			attr_dev(button0, "class", "btn btn-outline-secondary btn-sm btn-block");
+    			attr_dev(button0, "data-toggle", "collapse");
+    			attr_dev(button0, "type", "button");
+    			attr_dev(button0, "aria-expanded", "false");
+    			attr_dev(button0, "data-target", "#deadFuelMoisture");
+    			attr_dev(button0, "aria-controls", "deadFuelMoisture");
+    			add_location(button0, file$l, 20, 0, 808);
+    			attr_dev(div0, "class", "card card-body");
+    			add_location(div0, file$l, 25, 2, 1079);
+    			attr_dev(div1, "class", "collapse");
+    			attr_dev(div1, "id", "deadFuelMoisture");
+    			add_location(div1, file$l, 24, 0, 1031);
+    			attr_dev(button1, "class", "btn btn-outline-secondary btn-sm btn-block");
+    			attr_dev(button1, "data-toggle", "collapse");
+    			attr_dev(button1, "type", "button");
+    			attr_dev(button1, "aria-expanded", "false");
+    			attr_dev(button1, "data-target", "#liveFuelMoisture");
+    			attr_dev(button1, "aria-controls", "liveFuelMoisture");
+    			add_location(button1, file$l, 33, 0, 1329);
+    			attr_dev(div2, "class", "card card-body");
+    			add_location(div2, file$l, 38, 2, 1600);
+    			attr_dev(div3, "class", "collapse");
+    			attr_dev(div3, "id", "liveFuelMoisture");
+    			add_location(div3, file$l, 37, 0, 1552);
+    			attr_dev(button2, "class", "btn btn-outline-secondary btn-sm btn-block");
+    			attr_dev(button2, "data-toggle", "collapse");
+    			attr_dev(button2, "type", "button");
+    			attr_dev(button2, "aria-expanded", "false");
+    			attr_dev(button2, "data-target", "#slopeAspect");
+    			attr_dev(button2, "aria-controls", "slopeAspect");
+    			add_location(button2, file$l, 45, 0, 1794);
+    			attr_dev(div4, "class", "card card-body");
+    			add_location(div4, file$l, 50, 2, 2050);
+    			attr_dev(div5, "class", "collapse");
+    			attr_dev(div5, "id", "slopeAspect");
+    			add_location(div5, file$l, 49, 0, 2007);
+    			attr_dev(button3, "class", "btn btn-outline-secondary btn-sm btn-block");
+    			attr_dev(button3, "data-toggle", "collapse");
+    			attr_dev(button3, "type", "button");
+    			attr_dev(button3, "aria-expanded", "false");
+    			attr_dev(button3, "data-target", "#windSpeedDirection");
+    			attr_dev(button3, "aria-controls", "windSpeedDirection");
+    			add_location(button3, file$l, 57, 0, 2245);
+    			attr_dev(div6, "class", "card card-body");
+    			add_location(div6, file$l, 62, 2, 2530);
+    			attr_dev(div7, "class", "collapse");
+    			attr_dev(div7, "id", "windSpeedDirection");
+    			add_location(div7, file$l, 61, 0, 2480);
+    			attr_dev(button4, "class", "btn btn-outline-secondary btn-sm btn-block");
+    			attr_dev(button4, "data-toggle", "collapse");
+    			attr_dev(button4, "type", "button");
+    			attr_dev(button4, "aria-expanded", "false");
+    			attr_dev(button4, "data-target", "#airTemperature");
+    			attr_dev(button4, "aria-controls", "airTemperature");
+    			add_location(button4, file$l, 69, 0, 2739);
+    			attr_dev(div8, "class", "card card-body");
+    			add_location(div8, file$l, 74, 2, 3001);
+    			attr_dev(div9, "class", "collapse");
+    			attr_dev(div9, "id", "airTemperature");
+    			add_location(div9, file$l, 73, 0, 2955);
+    			attr_dev(button5, "class", "btn btn-outline-secondary btn-sm btn-block");
+    			attr_dev(button5, "data-toggle", "collapse");
+    			attr_dev(button5, "type", "button");
+    			attr_dev(button5, "aria-expanded", "false");
+    			attr_dev(button5, "data-target", "#elapsedTime");
+    			attr_dev(button5, "aria-controls", "elapsedTime");
+    			add_location(button5, file$l, 80, 0, 3125);
+    			attr_dev(div10, "class", "card card-body");
+    			add_location(div10, file$l, 85, 2, 3375);
+    			attr_dev(div11, "class", "collapse");
+    			attr_dev(div11, "id", "elapsedTime");
+    			add_location(div11, file$l, 84, 0, 3332);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
+    			mount_component(fuelselector, target, anchor);
+    			insert_dev(target, t0, anchor);
+    			mount_component(unitsselector, target, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, button0, anchor);
+    			insert_dev(target, t3, anchor);
     			insert_dev(target, div1, anchor);
     			append_dev(div1, div0);
-    			mount_component(fuelselector, div0, null);
-    			insert_dev(target, t0, anchor);
+    			mount_component(deadfuelmoisture, div0, null);
+    			insert_dev(target, t4, anchor);
+    			insert_dev(target, button1, anchor);
+    			insert_dev(target, t6, anchor);
     			insert_dev(target, div3, anchor);
     			append_dev(div3, div2);
-    			mount_component(unitsselector, div2, null);
-    			insert_dev(target, t1, anchor);
-    			insert_dev(target, div6, anchor);
-    			append_dev(div6, div4);
-    			mount_component(deadfuelmoisture, div4, null);
-    			append_dev(div6, t2);
-    			append_dev(div6, div5);
-    			mount_component(livefuelmoisture, div5, null);
-    			insert_dev(target, t3, anchor);
+    			mount_component(livefuelmoisture, div2, null);
+    			insert_dev(target, t7, anchor);
+    			insert_dev(target, button2, anchor);
+    			insert_dev(target, t9, anchor);
+    			insert_dev(target, div5, anchor);
+    			append_dev(div5, div4);
+    			mount_component(slopeaspect, div4, null);
+    			insert_dev(target, t10, anchor);
+    			insert_dev(target, button3, anchor);
+    			insert_dev(target, t12, anchor);
+    			insert_dev(target, div7, anchor);
+    			append_dev(div7, div6);
+    			mount_component(windspeeddirection, div6, null);
+    			insert_dev(target, t13, anchor);
+    			insert_dev(target, button4, anchor);
+    			insert_dev(target, t15, anchor);
+    			insert_dev(target, div9, anchor);
+    			append_dev(div9, div8);
+    			mount_component(airtemperature, div8, null);
+    			insert_dev(target, t16, anchor);
+    			insert_dev(target, button5, anchor);
+    			insert_dev(target, t18, anchor);
     			insert_dev(target, div11, anchor);
-    			append_dev(div11, div7);
-    			mount_component(slopeaspect, div7, null);
-    			append_dev(div11, t4);
-    			append_dev(div11, div8);
-    			mount_component(windspeeddirection, div8, null);
-    			append_dev(div11, t5);
-    			append_dev(div11, div9);
-    			mount_component(airtemperature, div9, null);
-    			append_dev(div11, t6);
     			append_dev(div11, div10);
     			mount_component(elapsedtime, div10, null);
     			current = true;
@@ -44943,20 +45007,38 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div1);
-    			destroy_component(fuelselector);
+    			destroy_component(fuelselector, detaching);
     			if (detaching) detach_dev(t0);
-    			if (detaching) detach_dev(div3);
-    			destroy_component(unitsselector);
+    			destroy_component(unitsselector, detaching);
     			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(div6);
-    			destroy_component(deadfuelmoisture);
-    			destroy_component(livefuelmoisture);
+    			if (detaching) detach_dev(button0);
     			if (detaching) detach_dev(t3);
-    			if (detaching) detach_dev(div11);
+    			if (detaching) detach_dev(div1);
+    			destroy_component(deadfuelmoisture);
+    			if (detaching) detach_dev(t4);
+    			if (detaching) detach_dev(button1);
+    			if (detaching) detach_dev(t6);
+    			if (detaching) detach_dev(div3);
+    			destroy_component(livefuelmoisture);
+    			if (detaching) detach_dev(t7);
+    			if (detaching) detach_dev(button2);
+    			if (detaching) detach_dev(t9);
+    			if (detaching) detach_dev(div5);
     			destroy_component(slopeaspect);
+    			if (detaching) detach_dev(t10);
+    			if (detaching) detach_dev(button3);
+    			if (detaching) detach_dev(t12);
+    			if (detaching) detach_dev(div7);
     			destroy_component(windspeeddirection);
+    			if (detaching) detach_dev(t13);
+    			if (detaching) detach_dev(button4);
+    			if (detaching) detach_dev(t15);
+    			if (detaching) detach_dev(div9);
     			destroy_component(airtemperature);
+    			if (detaching) detach_dev(t16);
+    			if (detaching) detach_dev(button5);
+    			if (detaching) detach_dev(t18);
+    			if (detaching) detach_dev(div11);
     			destroy_component(elapsedtime);
     		}
     	};
@@ -45133,8 +45215,7 @@ var app = (function () {
     const file$m = "C:\\cbevins\\dev\\node\\firescope\\src\\component\\app\\Main.svelte";
 
     function create_fragment$m(ctx) {
-    	let link0;
-    	let link1;
+    	let link;
     	let t0;
     	let div9;
     	let div8;
@@ -45169,8 +45250,7 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			link0 = element("link");
-    			link1 = element("link");
+    			link = element("link");
     			t0 = space();
     			div9 = element("div");
     			div8 = element("div");
@@ -45185,39 +45265,35 @@ var app = (function () {
     			div5 = element("div");
     			div4 = element("div");
     			create_component(tabs.$$.fragment);
-    			attr_dev(link0, "rel", "stylesheet");
-    			attr_dev(link0, "href", "bootstrap.min.css");
-    			add_location(link0, file$m, 8, 2, 159);
-    			attr_dev(link1, "rel", "stylesheet");
-    			attr_dev(link1, "href", "firescope.css");
-    			add_location(link1, file$m, 9, 2, 210);
+    			attr_dev(link, "rel", "stylesheet");
+    			attr_dev(link, "href", "firescope.css");
+    			add_location(link, file$m, 8, 2, 159);
     			attr_dev(div0, "class", "overflow-auto");
-    			add_location(div0, file$m, 17, 10, 412);
+    			add_location(div0, file$m, 16, 10, 361);
     			attr_dev(div1, "class", "card-body");
-    			add_location(div1, file$m, 16, 8, 378);
+    			add_location(div1, file$m, 15, 8, 327);
     			attr_dev(div2, "class", "card");
-    			add_location(div2, file$m, 15, 6, 351);
-    			attr_dev(div3, "class", "col-sm-4");
-    			add_location(div3, file$m, 14, 4, 322);
+    			add_location(div2, file$m, 14, 6, 300);
+    			attr_dev(div3, "class", "col-sm-3");
+    			add_location(div3, file$m, 13, 4, 271);
     			attr_dev(div4, "class", "overflow-auto");
-    			add_location(div4, file$m, 26, 10, 649);
+    			add_location(div4, file$m, 25, 10, 598);
     			attr_dev(div5, "class", "card-body");
-    			add_location(div5, file$m, 25, 8, 615);
+    			add_location(div5, file$m, 24, 8, 564);
     			attr_dev(div6, "class", "card");
-    			add_location(div6, file$m, 24, 6, 588);
+    			add_location(div6, file$m, 23, 6, 537);
     			attr_dev(div7, "class", "col-sm");
-    			add_location(div7, file$m, 23, 4, 561);
+    			add_location(div7, file$m, 22, 4, 510);
     			attr_dev(div8, "class", "row");
-    			add_location(div8, file$m, 13, 2, 300);
+    			add_location(div8, file$m, 12, 2, 249);
     			attr_dev(div9, "class", "container-lg");
-    			add_location(div9, file$m, 12, 0, 271);
+    			add_location(div9, file$m, 11, 0, 220);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			append_dev(document.head, link0);
-    			append_dev(document.head, link1);
+    			append_dev(document.head, link);
     			insert_dev(target, t0, anchor);
     			insert_dev(target, div9, anchor);
     			append_dev(div9, div8);
@@ -45256,8 +45332,7 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			detach_dev(link0);
-    			detach_dev(link1);
+    			detach_dev(link);
     			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(div9);
     			destroy_component(inputpanel);

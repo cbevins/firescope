@@ -31,6 +31,9 @@
         }]
       },
       options: {
+        animation: {
+          duration: 0
+        },
         display: true,
         scales: {
           xAxes: [{
@@ -72,9 +75,9 @@
 
     <table>
       <tr>
-        <td>Select X</td>
+        <td>X</td>
         <td><InputSelector bind:selected={$_input.graph.x.key} _input={_input}/></td>
-        <td>Select Y</td>
+        <td>Y</td>
         <td><OutputSelector bind:selected={$_input.graph.y.key} _output={_output}/></td>
         <td>
           <button type="button"

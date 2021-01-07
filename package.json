@@ -19,6 +19,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
+    "deploy": "surge public cbevins-firescope.surge.sh",
     "start": "sirv public --single",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook",
